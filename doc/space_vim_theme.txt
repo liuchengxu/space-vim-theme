@@ -1,0 +1,60 @@
+*space_vim_theme.txt*
+
+
+		  VIM REFERENCE MANUAL    by Liu-Cheng Xu
+
+
+			Space-vim theme colorscheme			*space_vim_theme*
+
+Space-vim-theme originates from
+[spacemacs-theme](https://github.com/nashamri/spacemacs-theme).
+
+Both dark and light backgrounds are supported, you must set 'background'
+before loading the colorscheme. For example:
+>
+	set background=dark
+	colorscheme space_vim_theme
+<
+Space-vim theme requires at least 256 colors and supports "true color" terminals.
+
+==============================================================================
+1. Colorscheme options					*space_vim-options*
+
+						*g:space_vim_filetype_hi_groups*
+Set to 1 to include syntax highlighting definitions for several filetypes.
+>
+	let g:space_vim_filetype_hi_groups = 0
+<
+Note: setting this to 1 may leave "a wake of destruction when switching away"
+(Tim Pope), that is, when you switch to a different colorscheme the
+highlighting may look wrong or disabled.
+
+							*g:space_vim_italic*
+Set to 1 if you want to enable italics in the terminal. Note that the terminal
+must support italics.
+>
+	let g:space_vim_italic = 0
+<
+						*g:space_vim_italicize_strings*
+Set to 1 if you want strings in italics.
+>
+	let g:space_vim_italicize_strings = 0
+<
+						*g:space_vim_plugin_hi_groups*
+Set to 1 to include syntax highlighting definitions for a number of popular
+plugins:
+>
+	let g:space_vim_plugin_hi_groups = 0
+<
+Note: setting this to 1 may leave "a wake of destruction when switching away"
+(Tim Pope), that is, when you switch to a different colorscheme the
+highlighting may look wrong or disabled.
+
+						*g:space_vim_transp_bg*
+Set to 1 if you want a transparent background. Takes effect only in the
+terminal.
+>
+	let g:space_vim_transp_bg = 0
+<
+
+vim:tw=78:ts=8:ft=help:norl:

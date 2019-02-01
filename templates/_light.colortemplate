@@ -1,0 +1,74 @@
+# vim: ft=colortemplate
+
+Color: bg0        #fbf8ef ~
+Color: bg1        #efeae9 ~
+Color: bg2        #e3dedd ~
+Color: bg3        #d2ceda ~
+Color: bg4        #a8a4ae ~
+
+Color: fg0        #83758c ~
+# base
+Color: fg1        #655370 ~
+Color: fg2        #5a4a64 ~
+Color: fg3        #504259 ~
+Color: fg4        #463a4e ~
+Color: fg5        #8c799f ~
+Color: fg6        #c8c6dd ~
+
+# LineNr
+Color: grey       #a8a8bf ~
+Color: grey1      #768294 ~
+
+Color: red        #f2241f ~
+Color: red1       #ba2f59 ~
+Color: red2       #f54e3c ~
+
+Color: blue0      #58b0d9 ~
+Color: blue       #3a81c3 ~
+# Var
+Color: blue1      #715ab1 ~
+
+Color: purple     #6c3163 ~
+Color: purple0    #d698fe ~
+Color: purple1    #4e3163 ~
+Color: purple2    #d3d3e7 ~
+Color: purple3    #544a65 ~
+Color: purple4    #e2e0ea ~
+
+Color: green      #67b11d ~
+# Comment
+Color: green1     #2aa1ae ~
+
+Color: aqua       #24775c ~
+Color: aqua1      #4495b4 ~
+
+Color: orange0    #d79650 ~
+Color: orange     #b46843 ~
+
+Color: yellow     #b1951d ~
+Color: yellow1    #e5d11c ~
+
+Color: cyan       #21b8c7 ~
+
+Color: meta       #da8b55 ~
+Color: mat        #ba2f59 ~
+Color: highlight  #d3d3e7 ~
+Color: war        #dc752f ~
+Color: cblk       #655370 ~
+Color: comp       #6c4173 ~
+
+Color: number     #e697e6 ~
+Color: debug      #ffc8c8 ~
+Color: float      #b7b7ff ~
+Color: delimiter  #74baac ~
+
+verbatim
+let g:terminal_ansi_colors = [
+\ '@guibg0', '@guineutralred', '@guineutralgreen', '@guineutralyellow', '@guineutralblue', '@guineutralpurple', '@guineutralaqua', '@guifg3',
+\ '@guibg4', '@guired', '@guigreen', '@guiyellow', '@guiblue', '@guipurple', '@guiaqua', '@guifg1']
+endverbatim
+
+Include: _common.colortemplate
+
+StatusLineNC       purple2  bg1
+Visual             none     bg2

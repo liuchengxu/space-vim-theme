@@ -1,0 +1,8 @@
+# vim: ft=colortemplate
+
+Author:          Liu-Cheng Xu <xuliuchengxlc@gmail.com>
+Maintainer:      Liu-Cheng Xu <xuliuchengxlc@gmail.com>
+Website:         https://github.com/liuchengxu/space-vim-theme
+Description:     Light and dark theme inspired by spacemacs-theme
+Terminal Colors: 256
+Option Prefix:   space_vim

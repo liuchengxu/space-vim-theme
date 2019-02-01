@@ -1,0 +1,14 @@
+# vim: ft=colortemplate
+
+Full name:  Space-vim theme
+Short name: space_vim_theme
+
+Include: _info.colortemplate
+Include: _help.colortemplate
+Include: _neutral_colors.colortemplate
+
+Background: dark
+Include: _dark.colortemplate
+
+Background: light
+Include: _light.colortemplate

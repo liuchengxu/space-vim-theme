@@ -1,0 +1,205 @@
+# vim: ft=colortemplate
+
+# ;; generic
+# act1          dark #222226 light #e7e5eb    gui00
+# act2          dark #5d4d7a light #d3d3e7    gui01
+# base          dark #b2b2b2 light #655370    gui02
+# base-dim      dark #686868 light #a094a2    gui03
+# bg1           dark #292b2e light #fbf8ef    gui04               => Normal-bg
+# bg2           dark #212026 light #efeae9    gui05
+# bg3           dark #100a14 light #e3dedd    gui06
+# bg4           dark #0a0814 light #d2ceda    gui07
+# border        dark #5d4d7a light #b3b9be    gui08
+# cblk          dark #cbc1d5 light #655370    gui09
+# cblk-bg       dark #2f2b33 light #e8e3f0    gui0A
+# cblk-ln       dark #827591 light #9380b2    gui0B
+# cblk-ln-bg    dark #373040 light #ddd8eb    gui0C
+# cursor        dark #e3dedd light #100a14    gui0D
+# const         dark #a45bad light #4e3163    gui0E               => Const
+# comment       dark #2aa1ae light #2aa1ae    gui0F  green1       => Comment
+# comment-light dark #2aa1ae light #a49da5    gui10
+# comment-bg    dark #292e34 light #ecf3ec    gui11
+# comp          dark #c56ec3 light #6c4173    gui12
+# err           dark #e0211d light #e0211d    gui13               => Error
+# func          dark #bc6ec5 light #6c3163    gui14               => Function ?
+# head1         dark #4f97d7 light #3a81c3    gui15    blue       => markdownH1
+# head1-bg      dark #293239 light #edf1ed    gui16    blue-bg
+# head2         dark #2d9574 light #2d9574    gui17    aqua       => markdownH2
+# head2-bg      dark #293235 light #edf2e9    gui18    aqua-bg
+# head3         dark #67b11d light #67b11d    gui19    green      => markdownH3
+# head3-bg      dark #293235 light #edf2e9    gui1A    green-bg
+# head4         dark #b1951d light #b1951d    gui1B    yellow     => markdownH4
+# head4-bg      dark #32322c light #f6f1e1    gui1C    yellow-bg
+# highlight     dark #444155 light #d3d3e7    gui1D
+# highlight-dim dark #3b314d light #e7e7fc    gui1E
+# keyword       dark #4f97d7 light #3a81c3    gui1F    blue       => Keyword
+# lnum          dark #44505c light #a8a8bf    gui20               => LineNr
+# mat           dark #86dc2f light #ba2f59    gui21               => Search-bg
+# meta          dark #9f8766 light #da8b55    gui22
+# str           dark #2d9574 light #2d9574    gui23    aqua       => String ?
+# suc           dark #86dc2f light #42ae2c    gui24
+# ttip          dark #9a9aba light #8c799f    gui25               => Pmenu
+# ttip-sl       dark #5e5079 light #c8c6dd    gui26               => PmenuSel
+# ttip-bg       dark #34323e light #e2e0ea    gui27
+# type          dark #ce537a light #ba2f59    gui28    red1
+# var           dark #7590db light #715ab1    gui29    blue1
+# war           dark #dc752f light #dc752f    gui2A
+#
+# ;; colors
+# aqua          dark #2d9574  light #2d9574   gui30
+# aqua-bg       dark #293235  light #edf2e9   gui31
+# green         dark #67b11d  light #67b11d   gui32
+# green-bg      dark #293235  light #edf2e9   gui33
+# green-bg-s    dark #29422d  light #dae6d0   gui34
+# cyan          dark #28def0  light #21b8c7   gui35
+# red           dark #f2241f  light #f2241f   gui36
+# red-bg        dark #3c2a2c  light #faede4   gui37
+# red-bg-s      dark #512e31  light #eed9d2   gui38
+# blue          dark #4f97d7  light #3a81c3   gui39
+# blue-bg       dark #293239  light #edf1ed   gui3A
+# blue-bg-s     dark #2d4252  light #d1dcdf   gui3B
+# magenta       dark #a31db1  light #a31db1   gui3C
+# yellow        dark #b1951d  light #b1951d   gui3D
+# yellow-bg     dark #32322c  light #f6f1e1   gui3E
+
+# blue: #8ebbe6          --> #e6b98e orange
+# blue: #4f97d7          --> #d78f4f orange
+# blue: #7590db          --> #dbc075 orange
+
+# func
+# magenta: #bc6ec5       --> #77c56e green
+# blue magenta: 5d4d7a   --> #6a7a4d yellow green
+
+# green diffadded
+# green cyan: #1db167    --> #b11d67 magenta red
+#
+# GUI color definitions
+# ---|-----------------------|--------------
+# ## | ORIGINAL THEME SWATCH | ACTUAL COLOUR
+# ---|-----------------------|--------------
+# 00 | bg1                   | dark grey
+# 01 | bg2                   | darker grey
+# 02 | act2                  | dark purple
+# 03 | n/a                   | medium cool grey
+# 04 | base                  | light grey
+# 05 | base                  | light grey
+# 06 | cblk-ln               | purple grey
+# 07 | cblk-ln-bg            | dark purple grey
+# 08 | var                   | azure
+# 09 | const                 | medium purple
+# 0A | comment               | teal
+# 0B | str                   | cool green
+# 0C | type                  | coral
+# 0D | func                  | pink
+# 0E | keyword               | blue
+# 0F | act2                  | dark purple
+# ---|-----------------------|--------------
+# let s:gui00 = "292b2e"
+# let s:gui01 = "212026"
+# let s:gui02 = "5d4d7a"
+# let s:gui03 = "68727c"
+# let s:gui04 = "b2b2b2"
+# let s:gui05 = "b2b2b2"
+# let s:gui06 = "827591"
+# let s:gui07 = "373040"
+# let s:gui08 = "7590db"
+# let s:gui09 = "a45bad"
+# let s:gui0A = "2aa1ae"
+# let s:gui0B = "2d9574"
+# let s:gui0C = "ce537a"
+# let s:gui0D = "bc6ec5"
+# let s:gui0E = "4f97d7"
+# let s:gui0F = "5d4d7a"
+
+######################
+# Color: green #67b11d
+# Color: red   #f2241f
+
+
+# Color palette for dark background
+# bg0  ----> spacemacs-theme bg1
+Color: bg0        #292b2e ~
+Color: bg1        #212026 ~
+Color: bg2        #100a14 ~
+Color: bg3        #0a0814 ~
+Color: bg4        #34323e ~
+
+Color: fg0        #cdcdcd ~
+# fg1  ----> spacemacs-theme base
+Color: fg1        #b2b2b2 ~
+Color: fg2        #8e8e8e ~
+Color: fg3        #727272 ~
+Color: fg4        #5b5b5b ~
+# pmenu fg
+Color: fg5        #9a9aba ~
+# pmenu sel fg
+Color: fg6        #5e5079 ~
+Color: fg7        #666666 ~
+
+# LineNr
+Color: grey       #44505c ~
+Color: grey1      #768294 ~
+
+# red -> ErrorMsg
+Color: red        #f2241f ~
+# Type
+Color: red1       #ce537a ~
+
+Color: red2       #f54e3c ~
+
+Color: green      #67b11d ~
+# Comment
+Color: green1     #2aa1ae ~
+
+Color: blue0      #58b0d9 ~
+Color: blue       #4f97d7 ~
+# Var
+Color: blue1      #7590db ~
+
+# Function
+Color: purple     #bc6ec5 ~
+# light purple
+Color: purple0    #d698fe ~
+# Const
+Color: purple1    #a45bad ~
+# statusline --> act2
+Color: purple2    #5d4d7a ~
+# dark purple
+Color: purple3    #544a65 ~
+# pmemu bg
+Color: purple4    #34323e ~
+
+# spacemacs-theme: string
+Color: aqua       #2d9574 ~
+Color: aqua1      #4495b4 ~
+
+# spacemacs-theme ttip-sl
+# 5e5079
+
+Color: orange0    #d79650 ~
+Color: orange     #e18254 ~
+
+Color: yellow     #b1951d ~
+Color: yellow1    #e5d11c ~
+
+Color: cyan       #28def0 ~
+
+Color: mat        #86dc2f ~
+Color: meta       #9f8766 ~
+Color: highlight  #444155 ~
+
+Color: comp       #c56ec3 ~
+Color: cblk       #cbc1d5 ~
+Color: war        #dc752f ~
+Color: float      #b7b7ff ~
+Color: delimiter  #74baac ~
+Color: debug      #ffc8c8 ~
+Color: number     #e697e6 ~
+
+verbatim
+let g:terminal_ansi_colors = [
+\ '@guibg0', '@guineutralred', '@guineutralgreen', '@guineutralyellow', '@guineutralblue', '@guineutralpurple', '@guineutralaqua', '@guifg3',
+\ '@guibg4', '@guired', '@guigreen', '@guiyellow', '@guiblue', '@guipurple', '@guiaqua', '@guifg1']
+endverbatim
+
+Include: _common.colortemplate

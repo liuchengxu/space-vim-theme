@@ -1,0 +1,162 @@
+# vim: ft=colortemplate fdm=marker
+
+# Default highlight groups {{{
+verbatim
+if !has('gui_running') && get(g:, '@optionprefix_transp_bg', 0)
+endverbatim
+    # Transparent background
+    Normal       fg1    none
+    CursorLineNr purple none
+    FoldColumn   purple none
+    SignColumn   fg1    none
+    VertSplit    bg1    none
+verbatim
+else
+endverbatim
+    # Opaque background
+    Normal       fg1    bg0
+    CursorLineNr purple bg1
+    FoldColumn   purple bg1
+    SignColumn   fg1    bg0
+    VertSplit    bg1    bg0
+verbatim
+endif
+endverbatim
+
+# Group                          Fg       Bg      Attributes
+ColorColumn                      none     bg1
+Conceal                          blue     none
+Cursor                           orange   none    bold,reverse
+CursorColumn                  -> CursorLine
+CursorLine                       none     bg1
+DiffAdd                          green    bg0     reverse
+DiffChange                       orange   bg0     reverse
+DiffDelete                       red      bg0     reverse
+DiffText                         yellow   bg0     reverse
+Directory                        blue     none    bold
+EndOfBuffer                      bg0      none
+Error                            red      bg0     bold,reverse
+ErrorMsg                         bg0      red
+Folded                           purple1  bg1     g=italic
+IncSearch                        orange   bg0     bold,reverse
+LineNr                           grey     none
+MatchParen                       green    none    bold,underline
+ModeMsg                          yellow1  none
+MoreMsg                       -> ModeMsg
+NonText                          grey     none
+
+Pmenu                            fg5      purple4
+PmenuSbar                        none     bg1
+PmenuSel                         none     fg6
+PmenuThumb                       none     purple2
+
+Question                         orange   none    bold
+QuickFixLine                  -> Search
+Search                           green    bg0     bold,reverse
+SpecialKey                       purple   none
+SpellBad                         red      none    t=underline g=italic,undercurl s=red
+SpellCap                         blue     none    t=underline g=italic,undercurl s=blue
+SpellLocal                       aqua     none    t=underline g=italic,undercurl s=aqua
+SpellRare                        purple   none    t=underline g=italic,undercurl s=purple
+StatusLine                       fg1      purple2
+StatusLineNC                     purple2  bg4
+StatusLineTerm                -> StatusLine
+StatusLineTermNC              -> StatusLineNC
+TabLineFill                      purple3  bg1
+TabLineSel                       green    bg1
+TabLine                       -> TabLineFill
+Title                            green    none    bold
+Visual                           none     purple3
+VisualNOS                     -> Visual
+WarningMsg                       red      none
+WildMenu                         orange   bg1     bold
+# Other conventional group names (see `:help group-name`)
+Boolean                          war   none
+Character                        purple   none
+Comment                          green1   none    g=italic
+Conditional                      blue     none    bold
+Constant                         orange   none
+Define                           aqua     none
+Debug                            red2     none
+Delimiter                        delimiter      none
+Error                            red      bg0     bold,reverse
+Exception                        red      none
+Float                            float    none
+Function                         purple   none    bold
+Identifier                       blue1    none
+Ignore                           fg       none
+Include                          yellow   none
+Keyword                          blue     none    bold
+Label                            red1     none
+Macro                            blue1    none    bold
+Number                           number   none
+Operator                         blue0    none
+PreCondit                        purple1  none
+PreProc                          purple0  none
+Repeat                           red1     none    bold
+SpecialChar                      cyan     none
+SpecialComment                   grey1    none
+Statement                        blue     none
+StorageClass                     yellow   none    bold
+Special                          orange0  none
+String                           aqua     none
+Structure                        aqua1    none    bold
+Tag                              orange   none
+Todo                             orange   none    t=bold g=bold,italic
+Type                             red1     none
+Typedef                          yellow   none
+Underlined                       blue     none    underline
+# Language mapping cursor
+lCursor                       -> Cursor
+# See `:help CursorIM`
+CursorIM                         none     none    reverse
+# See `:help window-toolbar`
+ToolbarLine                      none     bg3
+ToolbarButton                    fg0      bg3     bold
+# }}}
+
+# Italics {{{
+verbatim
+if get(g:, "@optionprefix_italic", 0)
+  hi Comment    cterm=italic
+  hi Folded     cterm=italic
+  hi SpellBad   cterm=italic,underline
+  hi SpellCap   cterm=italic,underline
+  hi SpellLocal cterm=italic,underline
+  hi SpellRare  cterm=italic,underline
+  hi Todo       cterm=italic
+endif
+if get(g:, "@optionprefix_italicize_strings", 0)
+  hi Special    cterm=italic gui=italic
+  hi String     cterm=italic gui=italic
+endif
+endverbatim
+# }}}
+
+# Additional highlight groups {{{
+# Input mode cursor
+iCursor                    -> Cursor
+# Visual mode cursor, selection
+vCursor                    -> Cursor
+
+# Useful for custom status lines
+NormalMode                    fg4    bg0     reverse
+InsertMode                    blue   bg0     reverse
+ReplaceMode                   aqua   bg0     reverse
+VisualMode                    orange bg0     reverse
+CommandMode                   purple bg0     reverse
+Warnings                      orange bg0     reverse
+# }}}
+
+# NeoVim terminal colors {{{
+Include: _neovim.colortemplate
+# }}}
+
+verbatim
+if !(get(g:, "@optionprefix_plugin_hi_groups", 0) || get(g:, "@optionprefix_filetype_hi_groups", 0))
+ finish
+endif
+endverbatim
+
+Include: _plugins.colortemplate
+Include: _filetypes.colortemplate
