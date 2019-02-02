@@ -66,10 +66,16 @@ vimCommentTitle                  blue1      none    bold
 vimNotation                      orange     none
 vimBracket                       orange     none
 vimMapModKey                     orange     none
-vimFuncSID                       fg3        none
+vimCommand                       blue       none    bold
+vimLet                           blue       none
+vimNorm                          blue       none
+vimFuncSID                     -> Function
+vimFunction                    -> Function
+vimGroup                         blue1      none
+vimHiGroup                     -> Type
 vimSetSep                        fg3        none
 vimSep                           fg3        none
-vimContinue                      fg3        none
+vimContinue                      yellow     none
 # }}}
 # Clojure {{{
 clojureKeyword                   blue       none

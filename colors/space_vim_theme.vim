@@ -4,7 +4,7 @@
 " Maintainer:   Liu-Cheng Xu <xuliuchengxlc@gmail.com>
 " Website:      https://github.com/liuchengxu/space-vim-theme
 " License:      Vim License (see `:help license`)
-" Last Updated: Fri Feb  1 11:15:00 2019
+" Last Updated: Fri Feb  1 22:21:17 2019
 
 if !(has('termguicolors') && &termguicolors) && !has('gui_running')
       \ && (!exists('&t_Co') || &t_Co < 256)
@@ -328,10 +328,16 @@ if &background ==# 'dark'
     hi vimNotation ctermfg=173 ctermbg=NONE guifg=#e18254 guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi vimBracket ctermfg=173 ctermbg=NONE guifg=#e18254 guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi vimMapModKey ctermfg=173 ctermbg=NONE guifg=#e18254 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi vimFuncSID ctermfg=243 ctermbg=NONE guifg=#727272 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi vimCommand ctermfg=32 ctermbg=NONE guifg=#4f97d7 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+    hi vimLet ctermfg=32 ctermbg=NONE guifg=#4f97d7 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi vimNorm ctermfg=32 ctermbg=NONE guifg=#4f97d7 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi! link vimFuncSID Function
+    hi! link vimFunction Function
+    hi vimGroup ctermfg=68 ctermbg=NONE guifg=#7590db guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi! link vimHiGroup Type
     hi vimSetSep ctermfg=243 ctermbg=NONE guifg=#727272 guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi vimSep ctermfg=243 ctermbg=NONE guifg=#727272 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi vimContinue ctermfg=243 ctermbg=NONE guifg=#727272 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi vimContinue ctermfg=136 ctermbg=NONE guifg=#b1951d guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi clojureKeyword ctermfg=32 ctermbg=NONE guifg=#4f97d7 guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi clojureCond ctermfg=173 ctermbg=NONE guifg=#e18254 guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi clojureSpecial ctermfg=173 ctermbg=NONE guifg=#e18254 guibg=NONE guisp=NONE cterm=NONE gui=NONE
@@ -912,10 +918,16 @@ if get(g:, "space_vim_filetype_hi_groups", 0)
   hi vimNotation ctermfg=166 ctermbg=NONE guifg=#b46843 guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi vimBracket ctermfg=166 ctermbg=NONE guifg=#b46843 guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi vimMapModKey ctermfg=166 ctermbg=NONE guifg=#b46843 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi vimFuncSID ctermfg=60 ctermbg=NONE guifg=#504259 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+  hi vimCommand ctermfg=32 ctermbg=NONE guifg=#3a81c3 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+  hi vimLet ctermfg=32 ctermbg=NONE guifg=#3a81c3 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+  hi vimNorm ctermfg=32 ctermbg=NONE guifg=#3a81c3 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+  hi! link vimFuncSID Function
+  hi! link vimFunction Function
+  hi vimGroup ctermfg=61 ctermbg=NONE guifg=#715ab1 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+  hi! link vimHiGroup Type
   hi vimSetSep ctermfg=60 ctermbg=NONE guifg=#504259 guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi vimSep ctermfg=60 ctermbg=NONE guifg=#504259 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi vimContinue ctermfg=60 ctermbg=NONE guifg=#504259 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+  hi vimContinue ctermfg=136 ctermbg=NONE guifg=#b1951d guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi clojureKeyword ctermfg=32 ctermbg=NONE guifg=#3a81c3 guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi clojureCond ctermfg=166 ctermbg=NONE guifg=#b46843 guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi clojureSpecial ctermfg=166 ctermbg=NONE guifg=#b46843 guibg=NONE guisp=NONE cterm=NONE gui=NONE
@@ -1469,10 +1481,16 @@ finish
 " vimNotation                      orange     none
 " vimBracket                       orange     none
 " vimMapModKey                     orange     none
-" vimFuncSID                       fg3        none
+" vimCommand                       blue       none    bold
+" vimLet                           blue       none
+" vimNorm                          blue       none
+" vimFuncSID                     -> Function
+" vimFunction                    -> Function
+" vimGroup                         blue1      none
+" vimHiGroup                     -> Type
 " vimSetSep                        fg3        none
 " vimSep                           fg3        none
-" vimContinue                      fg3        none
+" vimContinue                      yellow     none
 " clojureKeyword                   blue       none
 " clojureCond                      orange     none
 " clojureSpecial                   orange     none
@@ -2013,10 +2031,16 @@ finish
 " vimNotation                      orange     none
 " vimBracket                       orange     none
 " vimMapModKey                     orange     none
-" vimFuncSID                       fg3        none
+" vimCommand                       blue       none    bold
+" vimLet                           blue       none
+" vimNorm                          blue       none
+" vimFuncSID                     -> Function
+" vimFunction                    -> Function
+" vimGroup                         blue1      none
+" vimHiGroup                     -> Type
 " vimSetSep                        fg3        none
 " vimSep                           fg3        none
-" vimContinue                      fg3        none
+" vimContinue                      yellow     none
 " clojureKeyword                   blue       none
 " clojureCond                      orange     none
 " clojureSpecial                   orange     none
