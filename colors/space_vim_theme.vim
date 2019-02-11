@@ -4,7 +4,7 @@
 " Maintainer:   Liu-Cheng Xu <xuliuchengxlc@gmail.com>
 " Website:      https://github.com/liuchengxu/space-vim-theme
 " License:      Vim License (see `:help license`)
-" Last Updated: Fri Feb  1 22:21:17 2019
+" Last Updated: Mon Feb 11 12:33:10 2019
 
 if !(has('termguicolors') && &termguicolors) && !has('gui_running')
       \ && (!exists('&t_Co') || &t_Co < 256)
@@ -274,8 +274,8 @@ if &background ==# 'dark'
     hi SyntasticWarningSign ctermfg=136 ctermbg=234 guifg=#b1951d guibg=#212026 guisp=NONE cterm=NONE gui=NONE
     hi multiple_cursors_cursor ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE guisp=NONE cterm=NONE,reverse gui=NONE,reverse
     hi multiple_cursors_visual ctermfg=NONE ctermbg=232 guifg=NONE guibg=#100a14 guisp=NONE cterm=NONE gui=NONE
-    hi VimCurrentWord ctermfg=NONE ctermbg=232 guifg=NONE guibg=#100a14 guisp=NONE cterm=NONE gui=NONE
-    hi VimCurrentWordTwins ctermfg=NONE ctermbg=232 guifg=NONE guibg=#100a14 guisp=NONE cterm=NONE,underline gui=NONE,underline
+    hi CurrentWord ctermfg=NONE ctermbg=60 guifg=NONE guibg=#544a65 guisp=NONE cterm=NONE,underline gui=NONE,underline
+    hi CurrentWordTwins ctermfg=NONE ctermbg=60 guifg=NONE guibg=#544a65 guisp=NONE cterm=NONE gui=NONE
     let g:vimshell_escape_colors = [
           \ '#34323e', '#f2241f', '#67b11d', '#b1951d',
           \ '#4f97d7', '#bc6ec5', '#2d9574', '#5b5b5b',
@@ -455,52 +455,62 @@ if &background ==# 'dark'
     hi javascriptDOMNodeMethod ctermfg=249 ctermbg=NONE guifg=#b2b2b2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi javascriptDOMStorageMethod ctermfg=249 ctermbg=NONE guifg=#b2b2b2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi javascriptHeadersMethod ctermfg=249 ctermbg=NONE guifg=#b2b2b2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi javascriptAsyncFuncKeyword ctermfg=168 ctermbg=NONE guifg=#ce537a guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi javascriptAwaitFuncKeyword ctermfg=168 ctermbg=NONE guifg=#ce537a guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi jsClassKeyword ctermfg=29 ctermbg=NONE guifg=#2d9574 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi jsExtendsKeyword ctermfg=29 ctermbg=NONE guifg=#2d9574 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi jsExportDefault ctermfg=29 ctermbg=NONE guifg=#2d9574 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi javascriptAsyncFuncKeyword ctermfg=168 ctermbg=NONE guifg=#ce537a guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+    hi javascriptAwaitFuncKeyword ctermfg=168 ctermbg=NONE guifg=#ce537a guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+    hi! link jsClassKeyword Keyword
+    hi! link jsExtendsKeyword Keyword
+    hi jsExportDefault ctermfg=32 ctermbg=NONE guifg=#4f97d7 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
     hi jsTemplateBraces ctermfg=29 ctermbg=NONE guifg=#2d9574 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi jsGlobalNodeObjects ctermfg=249 ctermbg=NONE guifg=#b2b2b2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi jsGlobalObjects ctermfg=249 ctermbg=NONE guifg=#b2b2b2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi jsFunction ctermfg=29 ctermbg=NONE guifg=#2d9574 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi jsFuncParens ctermfg=243 ctermbg=NONE guifg=#727272 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi jsParens ctermfg=243 ctermbg=NONE guifg=#727272 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi! link jsGlobalNodeObjects Keyword
+    hi! link jsGlobalObjects Keyword
+    hi! link jsFunction Function
+    hi jsFuncParens ctermfg=173 ctermbg=NONE guifg=#e18254 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi jsParens ctermfg=168 ctermbg=NONE guifg=#ce537a guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi jsNull ctermfg=170 ctermbg=NONE guifg=#bc6ec5 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi jsUndefined ctermfg=170 ctermbg=NONE guifg=#bc6ec5 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi! link jsUndefined ErrorMsg
     hi jsClassDefinition ctermfg=136 ctermbg=NONE guifg=#b1951d guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi! link jsObjectProp Identifier
+    hi jsObjectKey ctermfg=74 ctermbg=NONE guifg=#58b0d9 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi jsFunctionKey ctermfg=68 ctermbg=NONE guifg=#7590db guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi jsBracket ctermfg=168 ctermbg=NONE guifg=#ce537a guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi jsObjectColon ctermfg=168 ctermbg=NONE guifg=#ce537a guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi jsFuncArgs ctermfg=74 ctermbg=NONE guifg=#58b0d9 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi jsFuncBraces ctermfg=68 ctermbg=NONE guifg=#7590db guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi jsVariableDef ctermfg=249 ctermbg=NONE guifg=#b2b2b2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi! link jsObjectBraces Special
+    hi jsObjectValue ctermfg=147 ctermbg=NONE guifg=#b7b7ff guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi typeScriptReserved ctermfg=29 ctermbg=NONE guifg=#2d9574 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi typeScriptLabel ctermfg=29 ctermbg=NONE guifg=#2d9574 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi typeScriptFuncKeyword ctermfg=29 ctermbg=NONE guifg=#2d9574 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi typeScriptIdentifier ctermfg=173 ctermbg=NONE guifg=#e18254 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi typeScriptBraces ctermfg=249 ctermbg=NONE guifg=#b2b2b2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi! link typeScriptLabel Label
+    hi! link typeScriptFuncKeyword Function
+    hi! link typeScriptIdentifier Identifier
+    hi typeScriptBraces ctermfg=168 ctermbg=NONE guifg=#ce537a guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi typeScriptEndColons ctermfg=249 ctermbg=NONE guifg=#b2b2b2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi typeScriptDOMObjects ctermfg=249 ctermbg=NONE guifg=#b2b2b2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi typeScriptAjaxMethods ctermfg=249 ctermbg=NONE guifg=#b2b2b2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi! link typeScriptAjaxMethods Function
     hi typeScriptLogicSymbols ctermfg=249 ctermbg=NONE guifg=#b2b2b2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi! link typeScriptDocSeeTag Comment
     hi! link typeScriptDocParam Comment
     hi! link typeScriptDocTags vimCommentTitle
-    hi typeScriptGlobalObjects ctermfg=249 ctermbg=NONE guifg=#b2b2b2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi typeScriptParens ctermfg=243 ctermbg=NONE guifg=#727272 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi typeScriptOpSymbols ctermfg=243 ctermbg=NONE guifg=#727272 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi typeScriptHtmlElemProperties ctermfg=249 ctermbg=NONE guifg=#b2b2b2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi typeScriptNull ctermfg=170 ctermbg=NONE guifg=#bc6ec5 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi! link typeScriptGlobalObjects Keyword
+    hi typeScriptParens ctermfg=68 ctermbg=NONE guifg=#7590db guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi! link typeScriptOpSymbols Operator
+    hi! link typeScriptHtmlElemProperties Special
+    hi typeScriptNull ctermfg=170 ctermbg=NONE guifg=#bc6ec5 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
     hi typeScriptInterpolationDelimiter ctermfg=29 ctermbg=NONE guifg=#2d9574 guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi purescriptModuleKeyword ctermfg=29 ctermbg=NONE guifg=#2d9574 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi purescriptModuleName ctermfg=249 ctermbg=NONE guifg=#b2b2b2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi purescriptModuleName ctermfg=168 ctermbg=NONE guifg=#ce537a guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
     hi purescriptWhere ctermfg=29 ctermbg=NONE guifg=#2d9574 guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi purescriptDelimiter ctermfg=240 ctermbg=NONE guifg=#5b5b5b guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi purescriptType ctermfg=249 ctermbg=NONE guifg=#b2b2b2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi purescriptImportKeyword ctermfg=29 ctermbg=NONE guifg=#2d9574 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi purescriptHidingKeyword ctermfg=29 ctermbg=NONE guifg=#2d9574 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi purescriptAsKeyword ctermfg=29 ctermbg=NONE guifg=#2d9574 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi purescriptStructure ctermfg=29 ctermbg=NONE guifg=#2d9574 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi purescriptOperator ctermfg=32 ctermbg=NONE guifg=#4f97d7 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi purescriptTypeVar ctermfg=249 ctermbg=NONE guifg=#b2b2b2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi purescriptConstructor ctermfg=249 ctermbg=NONE guifg=#b2b2b2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi purescriptFunction ctermfg=249 ctermbg=NONE guifg=#b2b2b2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi purescriptConditional ctermfg=173 ctermbg=NONE guifg=#e18254 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi! link purescriptType Type
+    hi! link purescriptImportKeyword Keyword
+    hi! link purescriptHidingKeyword Keyword
+    hi! link purescriptAsKeyword Keyword
+    hi! link purescriptStructure Structure
+    hi! link purescriptOperator Operator
+    hi! link purescriptTypeVar Type
+    hi! link purescriptConstructor Function
+    hi! link purescriptFunction Function
+    hi! link purescriptConditional Conditional
     hi purescriptBacktick ctermfg=173 ctermbg=NONE guifg=#e18254 guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi coffeeExtendedOp ctermfg=243 ctermbg=NONE guifg=#727272 guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi coffeeSpecialOp ctermfg=243 ctermbg=NONE guifg=#727272 guibg=NONE guisp=NONE cterm=NONE gui=NONE
@@ -864,8 +874,8 @@ if get(g:, "space_vim_plugin_hi_groups", 0)
   hi SyntasticWarningSign ctermfg=136 ctermbg=255 guifg=#b1951d guibg=#efeae9 guisp=NONE cterm=NONE gui=NONE
   hi multiple_cursors_cursor ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE guisp=NONE cterm=NONE,reverse gui=NONE,reverse
   hi multiple_cursors_visual ctermfg=NONE ctermbg=254 guifg=NONE guibg=#e3dedd guisp=NONE cterm=NONE gui=NONE
-  hi VimCurrentWord ctermfg=NONE ctermbg=254 guifg=NONE guibg=#e3dedd guisp=NONE cterm=NONE gui=NONE
-  hi VimCurrentWordTwins ctermfg=NONE ctermbg=254 guifg=NONE guibg=#e3dedd guisp=NONE cterm=NONE,underline gui=NONE,underline
+  hi CurrentWord ctermfg=NONE ctermbg=60 guifg=NONE guibg=#544a65 guisp=NONE cterm=NONE,underline gui=NONE,underline
+  hi CurrentWordTwins ctermfg=NONE ctermbg=60 guifg=NONE guibg=#544a65 guisp=NONE cterm=NONE gui=NONE
   let g:vimshell_escape_colors = [
         \ '#a8a4ae', '#f2241f', '#67b11d', '#b1951d',
         \ '#3a81c3', '#6c3163', '#24775c', '#463a4e',
@@ -1045,52 +1055,62 @@ if get(g:, "space_vim_filetype_hi_groups", 0)
   hi javascriptDOMNodeMethod ctermfg=60 ctermbg=NONE guifg=#655370 guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi javascriptDOMStorageMethod ctermfg=60 ctermbg=NONE guifg=#655370 guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi javascriptHeadersMethod ctermfg=60 ctermbg=NONE guifg=#655370 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi javascriptAsyncFuncKeyword ctermfg=161 ctermbg=NONE guifg=#ba2f59 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi javascriptAwaitFuncKeyword ctermfg=161 ctermbg=NONE guifg=#ba2f59 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi jsClassKeyword ctermfg=29 ctermbg=NONE guifg=#24775c guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi jsExtendsKeyword ctermfg=29 ctermbg=NONE guifg=#24775c guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi jsExportDefault ctermfg=29 ctermbg=NONE guifg=#24775c guibg=NONE guisp=NONE cterm=NONE gui=NONE
+  hi javascriptAsyncFuncKeyword ctermfg=161 ctermbg=NONE guifg=#ba2f59 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+  hi javascriptAwaitFuncKeyword ctermfg=161 ctermbg=NONE guifg=#ba2f59 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+  hi! link jsClassKeyword Keyword
+  hi! link jsExtendsKeyword Keyword
+  hi jsExportDefault ctermfg=32 ctermbg=NONE guifg=#3a81c3 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
   hi jsTemplateBraces ctermfg=29 ctermbg=NONE guifg=#24775c guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi jsGlobalNodeObjects ctermfg=60 ctermbg=NONE guifg=#655370 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi jsGlobalObjects ctermfg=60 ctermbg=NONE guifg=#655370 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi jsFunction ctermfg=29 ctermbg=NONE guifg=#24775c guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi jsFuncParens ctermfg=60 ctermbg=NONE guifg=#504259 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi jsParens ctermfg=60 ctermbg=NONE guifg=#504259 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+  hi! link jsGlobalNodeObjects Keyword
+  hi! link jsGlobalObjects Keyword
+  hi! link jsFunction Function
+  hi jsFuncParens ctermfg=166 ctermbg=NONE guifg=#b46843 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+  hi jsParens ctermfg=161 ctermbg=NONE guifg=#ba2f59 guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi jsNull ctermfg=89 ctermbg=NONE guifg=#6c3163 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi jsUndefined ctermfg=89 ctermbg=NONE guifg=#6c3163 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+  hi! link jsUndefined ErrorMsg
   hi jsClassDefinition ctermfg=136 ctermbg=NONE guifg=#b1951d guibg=NONE guisp=NONE cterm=NONE gui=NONE
+  hi! link jsObjectProp Identifier
+  hi jsObjectKey ctermfg=74 ctermbg=NONE guifg=#58b0d9 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+  hi jsFunctionKey ctermfg=61 ctermbg=NONE guifg=#715ab1 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+  hi jsBracket ctermfg=161 ctermbg=NONE guifg=#ba2f59 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+  hi jsObjectColon ctermfg=161 ctermbg=NONE guifg=#ba2f59 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+  hi jsFuncArgs ctermfg=74 ctermbg=NONE guifg=#58b0d9 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+  hi jsFuncBraces ctermfg=61 ctermbg=NONE guifg=#715ab1 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+  hi jsVariableDef ctermfg=60 ctermbg=NONE guifg=#655370 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+  hi! link jsObjectBraces Special
+  hi jsObjectValue ctermfg=147 ctermbg=NONE guifg=#b7b7ff guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi typeScriptReserved ctermfg=29 ctermbg=NONE guifg=#24775c guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi typeScriptLabel ctermfg=29 ctermbg=NONE guifg=#24775c guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi typeScriptFuncKeyword ctermfg=29 ctermbg=NONE guifg=#24775c guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi typeScriptIdentifier ctermfg=166 ctermbg=NONE guifg=#b46843 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi typeScriptBraces ctermfg=60 ctermbg=NONE guifg=#655370 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+  hi! link typeScriptLabel Label
+  hi! link typeScriptFuncKeyword Function
+  hi! link typeScriptIdentifier Identifier
+  hi typeScriptBraces ctermfg=161 ctermbg=NONE guifg=#ba2f59 guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi typeScriptEndColons ctermfg=60 ctermbg=NONE guifg=#655370 guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi typeScriptDOMObjects ctermfg=60 ctermbg=NONE guifg=#655370 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi typeScriptAjaxMethods ctermfg=60 ctermbg=NONE guifg=#655370 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+  hi! link typeScriptAjaxMethods Function
   hi typeScriptLogicSymbols ctermfg=60 ctermbg=NONE guifg=#655370 guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi! link typeScriptDocSeeTag Comment
   hi! link typeScriptDocParam Comment
   hi! link typeScriptDocTags vimCommentTitle
-  hi typeScriptGlobalObjects ctermfg=60 ctermbg=NONE guifg=#655370 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi typeScriptParens ctermfg=60 ctermbg=NONE guifg=#504259 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi typeScriptOpSymbols ctermfg=60 ctermbg=NONE guifg=#504259 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi typeScriptHtmlElemProperties ctermfg=60 ctermbg=NONE guifg=#655370 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi typeScriptNull ctermfg=89 ctermbg=NONE guifg=#6c3163 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+  hi! link typeScriptGlobalObjects Keyword
+  hi typeScriptParens ctermfg=61 ctermbg=NONE guifg=#715ab1 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+  hi! link typeScriptOpSymbols Operator
+  hi! link typeScriptHtmlElemProperties Special
+  hi typeScriptNull ctermfg=89 ctermbg=NONE guifg=#6c3163 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
   hi typeScriptInterpolationDelimiter ctermfg=29 ctermbg=NONE guifg=#24775c guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi purescriptModuleKeyword ctermfg=29 ctermbg=NONE guifg=#24775c guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi purescriptModuleName ctermfg=60 ctermbg=NONE guifg=#655370 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+  hi purescriptModuleName ctermfg=161 ctermbg=NONE guifg=#ba2f59 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
   hi purescriptWhere ctermfg=29 ctermbg=NONE guifg=#24775c guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi purescriptDelimiter ctermfg=237 ctermbg=NONE guifg=#463a4e guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi purescriptType ctermfg=60 ctermbg=NONE guifg=#655370 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi purescriptImportKeyword ctermfg=29 ctermbg=NONE guifg=#24775c guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi purescriptHidingKeyword ctermfg=29 ctermbg=NONE guifg=#24775c guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi purescriptAsKeyword ctermfg=29 ctermbg=NONE guifg=#24775c guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi purescriptStructure ctermfg=29 ctermbg=NONE guifg=#24775c guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi purescriptOperator ctermfg=32 ctermbg=NONE guifg=#3a81c3 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi purescriptTypeVar ctermfg=60 ctermbg=NONE guifg=#655370 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi purescriptConstructor ctermfg=60 ctermbg=NONE guifg=#655370 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi purescriptFunction ctermfg=60 ctermbg=NONE guifg=#655370 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi purescriptConditional ctermfg=166 ctermbg=NONE guifg=#b46843 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+  hi! link purescriptType Type
+  hi! link purescriptImportKeyword Keyword
+  hi! link purescriptHidingKeyword Keyword
+  hi! link purescriptAsKeyword Keyword
+  hi! link purescriptStructure Structure
+  hi! link purescriptOperator Operator
+  hi! link purescriptTypeVar Type
+  hi! link purescriptConstructor Function
+  hi! link purescriptFunction Function
+  hi! link purescriptConditional Conditional
   hi purescriptBacktick ctermfg=166 ctermbg=NONE guifg=#b46843 guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi coffeeExtendedOp ctermfg=60 ctermbg=NONE guifg=#504259 guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi coffeeSpecialOp ctermfg=60 ctermbg=NONE guifg=#504259 guibg=NONE guisp=NONE cterm=NONE gui=NONE
@@ -1435,8 +1455,8 @@ finish
 " SyntasticWarningSign             yellow bg1
 " multiple_cursors_cursor          none   none    reverse
 " multiple_cursors_visual          none   bg2
-" VimCurrentWord                   none   bg2
-" VimCurrentWordTwins              none   bg2   underline
+" CurrentWord                   none   purple3   underline
+" CurrentWordTwins              none   purple3
 " diffAdded                        green      none
 " diffRemoved                      red        none
 " diffChanged                      aqua       none
@@ -1608,52 +1628,62 @@ finish
 " javascriptDOMNodeMethod          fg1    none
 " javascriptDOMStorageMethod       fg1    none
 " javascriptHeadersMethod          fg1    none
-" javascriptAsyncFuncKeyword       red1   none
-" javascriptAwaitFuncKeyword       red1   none
-" jsClassKeyword                   aqua   none
-" jsExtendsKeyword                 aqua   none
-" jsExportDefault                  aqua   none
+" javascriptAsyncFuncKeyword       red1   none bold
+" javascriptAwaitFuncKeyword       red1   none bold
+" jsClassKeyword                -> Keyword
+" jsExtendsKeyword              -> Keyword
+" jsExportDefault                  blue   none bold
 " jsTemplateBraces                 aqua   none
-" jsGlobalNodeObjects              fg1    none
-" jsGlobalObjects                  fg1    none
-" jsFunction                       aqua   none
-" jsFuncParens                     fg3    none
-" jsParens                         fg3    none
+" jsGlobalNodeObjects           -> Keyword
+" jsGlobalObjects               -> Keyword
+" jsFunction                    -> Function
+" jsFuncParens                     orange    none
+" jsParens                         red1    none
 " jsNull                           purple none
-" jsUndefined                      purple none
+" jsUndefined                   -> ErrorMsg
 " jsClassDefinition                yellow none
+" jsObjectProp                  -> Identifier
+" jsObjectKey                      blue0 none
+" jsFunctionKey                    blue1 none
+" jsBracket                        red1 none
+" jsObjectColon                    red1 none
+" jsFuncArgs                       blue0 none
+" jsFuncBraces                     blue1 none
+" jsVariableDef                    fg1 none
+" jsObjectBraces                 -> Special
+" jsObjectValue                    float none
 " typeScriptReserved               aqua   none
-" typeScriptLabel                  aqua   none
-" typeScriptFuncKeyword            aqua   none
-" typeScriptIdentifier             orange none
-" typeScriptBraces                 fg1    none
+" typeScriptLabel               -> Label
+" typeScriptFuncKeyword         -> Function
+" typeScriptIdentifier          -> Identifier
+" typeScriptBraces                 red1    none
 " typeScriptEndColons              fg1    none
 " typeScriptDOMObjects             fg1    none
-" typeScriptAjaxMethods            fg1    none
+" typeScriptAjaxMethods         -> Function
 " typeScriptLogicSymbols           fg1    none
 " typeScriptDocSeeTag           -> Comment
 " typeScriptDocParam            -> Comment
 " typeScriptDocTags             -> vimCommentTitle
-" typeScriptGlobalObjects          fg1    none
-" typeScriptParens                 fg3    none
-" typeScriptOpSymbols              fg3    none
-" typeScriptHtmlElemProperties     fg1    none
-" typeScriptNull                   purple none
+" typeScriptGlobalObjects       -> Keyword
+" typeScriptParens                 blue1  none
+" typeScriptOpSymbols           -> Operator
+" typeScriptHtmlElemProperties  -> Special
+" typeScriptNull                   purple none bold
 " typeScriptInterpolationDelimiter aqua   none
 " purescriptModuleKeyword          aqua   none
-" purescriptModuleName             fg1    none
+" purescriptModuleName             red1   none bold
 " purescriptWhere                  aqua   none
 " purescriptDelimiter              fg4    none
-" purescriptType                   fg1    none
-" purescriptImportKeyword          aqua   none
-" purescriptHidingKeyword          aqua   none
-" purescriptAsKeyword              aqua   none
-" purescriptStructure              aqua   none
-" purescriptOperator               blue   none
-" purescriptTypeVar                fg1    none
-" purescriptConstructor            fg1    none
-" purescriptFunction               fg1    none
-" purescriptConditional            orange none
+" purescriptType                -> Type
+" purescriptImportKeyword       -> Keyword
+" purescriptHidingKeyword       -> Keyword
+" purescriptAsKeyword           -> Keyword
+" purescriptStructure           -> Structure
+" purescriptOperator            -> Operator
+" purescriptTypeVar             -> Type
+" purescriptConstructor         -> Function
+" purescriptFunction            -> Function
+" purescriptConditional         -> Conditional
 " purescriptBacktick               orange none
 " coffeeExtendedOp                 fg3    none
 " coffeeSpecialOp                  fg3    none
@@ -1985,8 +2015,8 @@ finish
 " SyntasticWarningSign             yellow bg1
 " multiple_cursors_cursor          none   none    reverse
 " multiple_cursors_visual          none   bg2
-" VimCurrentWord                   none   bg2
-" VimCurrentWordTwins              none   bg2   underline
+" CurrentWord                   none   purple3   underline
+" CurrentWordTwins              none   purple3
 " diffAdded                        green      none
 " diffRemoved                      red        none
 " diffChanged                      aqua       none
@@ -2158,52 +2188,62 @@ finish
 " javascriptDOMNodeMethod          fg1    none
 " javascriptDOMStorageMethod       fg1    none
 " javascriptHeadersMethod          fg1    none
-" javascriptAsyncFuncKeyword       red1   none
-" javascriptAwaitFuncKeyword       red1   none
-" jsClassKeyword                   aqua   none
-" jsExtendsKeyword                 aqua   none
-" jsExportDefault                  aqua   none
+" javascriptAsyncFuncKeyword       red1   none bold
+" javascriptAwaitFuncKeyword       red1   none bold
+" jsClassKeyword                -> Keyword
+" jsExtendsKeyword              -> Keyword
+" jsExportDefault                  blue   none bold
 " jsTemplateBraces                 aqua   none
-" jsGlobalNodeObjects              fg1    none
-" jsGlobalObjects                  fg1    none
-" jsFunction                       aqua   none
-" jsFuncParens                     fg3    none
-" jsParens                         fg3    none
+" jsGlobalNodeObjects           -> Keyword
+" jsGlobalObjects               -> Keyword
+" jsFunction                    -> Function
+" jsFuncParens                     orange    none
+" jsParens                         red1    none
 " jsNull                           purple none
-" jsUndefined                      purple none
+" jsUndefined                   -> ErrorMsg
 " jsClassDefinition                yellow none
+" jsObjectProp                  -> Identifier
+" jsObjectKey                      blue0 none
+" jsFunctionKey                    blue1 none
+" jsBracket                        red1 none
+" jsObjectColon                    red1 none
+" jsFuncArgs                       blue0 none
+" jsFuncBraces                     blue1 none
+" jsVariableDef                    fg1 none
+" jsObjectBraces                 -> Special
+" jsObjectValue                    float none
 " typeScriptReserved               aqua   none
-" typeScriptLabel                  aqua   none
-" typeScriptFuncKeyword            aqua   none
-" typeScriptIdentifier             orange none
-" typeScriptBraces                 fg1    none
+" typeScriptLabel               -> Label
+" typeScriptFuncKeyword         -> Function
+" typeScriptIdentifier          -> Identifier
+" typeScriptBraces                 red1    none
 " typeScriptEndColons              fg1    none
 " typeScriptDOMObjects             fg1    none
-" typeScriptAjaxMethods            fg1    none
+" typeScriptAjaxMethods         -> Function
 " typeScriptLogicSymbols           fg1    none
 " typeScriptDocSeeTag           -> Comment
 " typeScriptDocParam            -> Comment
 " typeScriptDocTags             -> vimCommentTitle
-" typeScriptGlobalObjects          fg1    none
-" typeScriptParens                 fg3    none
-" typeScriptOpSymbols              fg3    none
-" typeScriptHtmlElemProperties     fg1    none
-" typeScriptNull                   purple none
+" typeScriptGlobalObjects       -> Keyword
+" typeScriptParens                 blue1  none
+" typeScriptOpSymbols           -> Operator
+" typeScriptHtmlElemProperties  -> Special
+" typeScriptNull                   purple none bold
 " typeScriptInterpolationDelimiter aqua   none
 " purescriptModuleKeyword          aqua   none
-" purescriptModuleName             fg1    none
+" purescriptModuleName             red1   none bold
 " purescriptWhere                  aqua   none
 " purescriptDelimiter              fg4    none
-" purescriptType                   fg1    none
-" purescriptImportKeyword          aqua   none
-" purescriptHidingKeyword          aqua   none
-" purescriptAsKeyword              aqua   none
-" purescriptStructure              aqua   none
-" purescriptOperator               blue   none
-" purescriptTypeVar                fg1    none
-" purescriptConstructor            fg1    none
-" purescriptFunction               fg1    none
-" purescriptConditional            orange none
+" purescriptType                -> Type
+" purescriptImportKeyword       -> Keyword
+" purescriptHidingKeyword       -> Keyword
+" purescriptAsKeyword           -> Keyword
+" purescriptStructure           -> Structure
+" purescriptOperator            -> Operator
+" purescriptTypeVar             -> Type
+" purescriptConstructor         -> Function
+" purescriptFunction            -> Function
+" purescriptConditional         -> Conditional
 " purescriptBacktick               orange none
 " coffeeExtendedOp                 fg3    none
 " coffeeSpecialOp                  fg3    none

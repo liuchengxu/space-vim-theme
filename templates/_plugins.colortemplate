@@ -164,8 +164,8 @@ multiple_cursors_cursor          none   none    reverse
 multiple_cursors_visual          none   bg2
 # }}}
 
-VimCurrentWord                   none   bg2
-VimCurrentWordTwins              none   bg2   underline
+CurrentWord                   none   purple3   underline
+CurrentWordTwins              none   purple3
 
 # Vimshell {{{
 verbatim

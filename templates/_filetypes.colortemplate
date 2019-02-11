@@ -240,59 +240,69 @@ javascriptDOMNodeMethod          fg1    none
 javascriptDOMStorageMethod       fg1    none
 javascriptHeadersMethod          fg1    none
 
-javascriptAsyncFuncKeyword       red1   none
-javascriptAwaitFuncKeyword       red1   none
+javascriptAsyncFuncKeyword       red1   none bold
+javascriptAwaitFuncKeyword       red1   none bold
 # }}}
 # PanglossJS {{{
-jsClassKeyword                   aqua   none
-jsExtendsKeyword                 aqua   none
-jsExportDefault                  aqua   none
+jsClassKeyword                -> Keyword
+jsExtendsKeyword              -> Keyword
+jsExportDefault                  blue   none bold
 jsTemplateBraces                 aqua   none
-jsGlobalNodeObjects              fg1    none
-jsGlobalObjects                  fg1    none
-jsFunction                       aqua   none
-jsFuncParens                     fg3    none
-jsParens                         fg3    none
+jsGlobalNodeObjects           -> Keyword
+jsGlobalObjects               -> Keyword
+jsFunction                    -> Function
+jsFuncParens                     orange    none
+jsParens                         red1    none
 jsNull                           purple none
-jsUndefined                      purple none
+jsUndefined                   -> ErrorMsg
 jsClassDefinition                yellow none
+jsObjectProp                  -> Identifier
+jsObjectKey                      blue0 none
+jsFunctionKey                    blue1 none
+jsBracket                        red1 none
+jsObjectColon                    red1 none
+jsFuncArgs                       blue0 none
+jsFuncBraces                     blue1 none
+jsVariableDef                    fg1 none
+jsObjectBraces                 -> Special
+jsObjectValue                    float none
 # }}}
 # TypeScript {{{
 typeScriptReserved               aqua   none
-typeScriptLabel                  aqua   none
-typeScriptFuncKeyword            aqua   none
-typeScriptIdentifier             orange none
-typeScriptBraces                 fg1    none
+typeScriptLabel               -> Label
+typeScriptFuncKeyword         -> Function
+typeScriptIdentifier          -> Identifier
+typeScriptBraces                 red1    none
 typeScriptEndColons              fg1    none
 typeScriptDOMObjects             fg1    none
-typeScriptAjaxMethods            fg1    none
+typeScriptAjaxMethods         -> Function
 typeScriptLogicSymbols           fg1    none
 typeScriptDocSeeTag           -> Comment
 typeScriptDocParam            -> Comment
 typeScriptDocTags             -> vimCommentTitle
-typeScriptGlobalObjects          fg1    none
-typeScriptParens                 fg3    none
-typeScriptOpSymbols              fg3    none
-typeScriptHtmlElemProperties     fg1    none
-typeScriptNull                   purple none
+typeScriptGlobalObjects       -> Keyword
+typeScriptParens                 blue1  none
+typeScriptOpSymbols           -> Operator
+typeScriptHtmlElemProperties  -> Special
+typeScriptNull                   purple none bold
 typeScriptInterpolationDelimiter aqua   none
 # }}}
 # PureScript {{{
 purescriptModuleKeyword          aqua   none
-purescriptModuleName             fg1    none
+purescriptModuleName             red1   none bold
 purescriptWhere                  aqua   none
 purescriptDelimiter              fg4    none
-purescriptType                   fg1    none
-purescriptImportKeyword          aqua   none
-purescriptHidingKeyword          aqua   none
-purescriptAsKeyword              aqua   none
-purescriptStructure              aqua   none
-purescriptOperator               blue   none
+purescriptType                -> Type
+purescriptImportKeyword       -> Keyword
+purescriptHidingKeyword       -> Keyword
+purescriptAsKeyword           -> Keyword
+purescriptStructure           -> Structure
+purescriptOperator            -> Operator
 
-purescriptTypeVar                fg1    none
-purescriptConstructor            fg1    none
-purescriptFunction               fg1    none
-purescriptConditional            orange none
+purescriptTypeVar             -> Type
+purescriptConstructor         -> Function
+purescriptFunction            -> Function
+purescriptConditional         -> Conditional
 purescriptBacktick               orange none
 # }}}
 # CoffeeScript {{{
