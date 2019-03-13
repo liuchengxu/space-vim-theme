@@ -24,7 +24,7 @@ before loading the colorscheme. For example:
 1. Colorscheme options					*@optionprefix-options*
 
 						*g:@optionprefix_filetype_hi_groups*
-Set to 1 to include syntax highlighting definitions for several filetypes.
+Set to 0 to disable syntax highlighting definitions for several filetypes.
 >
 	let g:@optionprefix_filetype_hi_groups = 0
 <
@@ -44,7 +44,7 @@ Set to 1 if you want strings in italics.
 	let g:@optionprefix_italicize_strings = 0
 <
 						*g:@optionprefix_plugin_hi_groups*
-Set to 1 to include syntax highlighting definitions for a number of popular
+Set to 0 to disable syntax highlighting definitions for a number of popular
 plugins:
 >
 	let g:@optionprefix_plugin_hi_groups = 0

@@ -4,7 +4,7 @@
 " Maintainer:   Liu-Cheng Xu <xuliuchengxlc@gmail.com>
 " Website:      https://github.com/liuchengxu/space-vim-theme
 " License:      Vim License (see `:help license`)
-" Last Updated: Mon Feb 11 12:33:10 2019
+" Last Updated: Wed Mar 13 15:25:28 2019
 
 if !(has('termguicolors') && &termguicolors) && !has('gui_running')
       \ && (!exists('&t_Co') || &t_Co < 256)
@@ -82,7 +82,7 @@ if &background ==# 'dark'
   hi WildMenu ctermfg=173 ctermbg=234 guifg=#e18254 guibg=#212026 guisp=NONE cterm=NONE,bold gui=NONE,bold
   hi Boolean ctermfg=166 ctermbg=NONE guifg=#dc752f guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi Character ctermfg=170 ctermbg=NONE guifg=#bc6ec5 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi Comment ctermfg=37 ctermbg=NONE guifg=#2aa1ae guibg=NONE guisp=NONE cterm=NONE gui=NONE,italic
+  hi Comment ctermfg=37 ctermbg=NONE guifg=#2aa1ae guibg=NONE guisp=NONE cterm=NONE,none gui=NONE,italic,none
   hi Conditional ctermfg=32 ctermbg=NONE guifg=#4f97d7 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
   hi Constant ctermfg=173 ctermbg=NONE guifg=#e18254 guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi Define ctermfg=29 ctermbg=NONE guifg=#2d9574 guibg=NONE guisp=NONE cterm=NONE gui=NONE
@@ -160,7 +160,7 @@ if &background ==# 'dark'
     hi! link TermCursor Cursor
     hi TermCursorNC ctermfg=234 ctermbg=249 guifg=#212026 guibg=#b2b2b2 guisp=NONE cterm=NONE gui=NONE
   endif
-  if !(get(g:, "space_vim_plugin_hi_groups", 0) || get(g:, "space_vim_filetype_hi_groups", 0))
+  if !(get(g:, "space_vim_plugin_hi_groups", 1) || get(g:, "space_vim_filetype_hi_groups", 1))
     finish
   endif
   if get(g:, "space_vim_plugin_hi_groups", 0)
@@ -188,10 +188,10 @@ if &background ==# 'dark'
     hi! link EasyMotionShade Comment
     hi gitcommitSelectedFile ctermfg=70 ctermbg=NONE guifg=#67b11d guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi gitcommitDiscardedFile ctermfg=196 ctermbg=NONE guifg=#f2241f guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi GitGutterAdd ctermfg=70 ctermbg=234 guifg=#67b11d guibg=#212026 guisp=NONE cterm=NONE gui=NONE
-    hi GitGutterChange ctermfg=173 ctermbg=234 guifg=#e18254 guibg=#212026 guisp=NONE cterm=NONE gui=NONE
-    hi GitGutterDelete ctermfg=196 ctermbg=234 guifg=#f2241f guibg=#212026 guisp=NONE cterm=NONE gui=NONE
-    hi GitGutterChangeDelete ctermfg=168 ctermbg=234 guifg=#ce537a guibg=#212026 guisp=NONE cterm=NONE gui=NONE
+    hi GitGutterAdd ctermfg=70 ctermbg=235 guifg=#67b11d guibg=#292b2e guisp=NONE cterm=NONE,bold gui=NONE,bold
+    hi GitGutterChange ctermfg=173 ctermbg=235 guifg=#e18254 guibg=#292b2e guisp=NONE cterm=NONE,bold gui=NONE,bold
+    hi GitGutterDelete ctermfg=196 ctermbg=235 guifg=#f2241f guibg=#292b2e guisp=NONE cterm=NONE,bold gui=NONE,bold
+    hi GitGutterChangeDelete ctermfg=168 ctermbg=235 guifg=#ce537a guibg=#292b2e guisp=NONE cterm=NONE,bold gui=NONE,bold
     if get(g:, "indent_guides_auto_colors", 0)
       if get(g: "space_vim_invert_indent_guides", 0)
         hi IndentGuidesOdd ctermfg=235 ctermbg=232 guifg=#292b2e guibg=#100a14 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
@@ -257,8 +257,8 @@ if &background ==# 'dark'
     hi SignifySignAdd ctermfg=70 ctermbg=NONE guifg=#67b11d guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi SignifySignChange ctermfg=173 ctermbg=NONE guifg=#e18254 guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi SignifySignDelete ctermfg=196 ctermbg=NONE guifg=#f2241f guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi SignatureMarkText ctermfg=32 ctermbg=234 guifg=#4f97d7 guibg=#212026 guisp=NONE cterm=NONE gui=NONE
-    hi SignatureMarkerText ctermfg=170 ctermbg=234 guifg=#bc6ec5 guibg=#212026 guisp=NONE cterm=NONE gui=NONE
+    hi SignatureMarkText ctermfg=32 ctermbg=235 guifg=#4f97d7 guibg=#292b2e guisp=NONE cterm=NONE,bold gui=NONE,bold
+    hi SignatureMarkerText ctermfg=170 ctermbg=235 guifg=#bc6ec5 guibg=#292b2e guisp=NONE cterm=NONE,bold gui=NONE,bold
     hi StartifyBracket ctermfg=243 ctermbg=NONE guifg=#727272 guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi StartifyFile ctermfg=249 ctermbg=235 guifg=#b2b2b2 guibg=#292b2e guisp=NONE cterm=NONE gui=NONE
     hi StartifyNumber ctermfg=32 ctermbg=NONE guifg=#4f97d7 guibg=NONE guisp=NONE cterm=NONE gui=NONE
@@ -266,12 +266,12 @@ if &background ==# 'dark'
     hi StartifySlash ctermfg=32 ctermbg=NONE guifg=#4f97d7 guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi StartifySection ctermfg=32 ctermbg=NONE guifg=#4f97d7 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
     hi! link StartifySpecial Type
-    hi StartifyHeader ctermfg=170 ctermbg=NONE guifg=#bc6ec5 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-    hi StartifyFooter ctermfg=232 ctermbg=NONE guifg=#100a14 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi StartifyHeader ctermfg=133 ctermbg=NONE guifg=#a45bad guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi StartifyFooter ctermfg=133 ctermbg=NONE guifg=#a45bad guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi SyntasticError ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE guisp=#f2241f cterm=NONE,underline gui=NONE,undercurl
     hi SyntasticWarning ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE guisp=#b1951d cterm=NONE,underline gui=NONE,undercurl
-    hi SyntasticErrorSign ctermfg=196 ctermbg=234 guifg=#f2241f guibg=#212026 guisp=NONE cterm=NONE gui=NONE
-    hi SyntasticWarningSign ctermfg=136 ctermbg=234 guifg=#b1951d guibg=#212026 guisp=NONE cterm=NONE gui=NONE
+    hi SyntasticErrorSign ctermfg=196 ctermbg=235 guifg=#f2241f guibg=#292b2e guisp=NONE cterm=NONE gui=NONE
+    hi SyntasticWarningSign ctermfg=136 ctermbg=235 guifg=#b1951d guibg=#292b2e guisp=NONE cterm=NONE gui=NONE
     hi multiple_cursors_cursor ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE guisp=NONE cterm=NONE,reverse gui=NONE,reverse
     hi multiple_cursors_visual ctermfg=NONE ctermbg=232 guifg=NONE guibg=#100a14 guisp=NONE cterm=NONE gui=NONE
     hi CurrentWord ctermfg=NONE ctermbg=60 guifg=NONE guibg=#544a65 guisp=NONE cterm=NONE,underline gui=NONE,underline
@@ -363,6 +363,7 @@ if &background ==# 'dark'
     hi cOperator ctermfg=170 ctermbg=NONE guifg=#bc6ec5 guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi cStructure ctermfg=173 ctermbg=NONE guifg=#e18254 guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi rustSelf ctermfg=32 ctermbg=NONE guifg=#4f97d7 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+    hi rustPanic ctermfg=168 ctermbg=NONE guifg=#ce537a guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
     hi! link pythonCoding Comment
     hi cssBraces ctermfg=32 ctermbg=NONE guifg=#4f97d7 guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi cssFunctionName ctermfg=136 ctermbg=NONE guifg=#b1951d guibg=NONE guisp=NONE cterm=NONE gui=NONE
@@ -682,7 +683,7 @@ hi WarningMsg ctermfg=196 ctermbg=NONE guifg=#f2241f guibg=NONE guisp=NONE cterm
 hi WildMenu ctermfg=166 ctermbg=255 guifg=#b46843 guibg=#efeae9 guisp=NONE cterm=NONE,bold gui=NONE,bold
 hi Boolean ctermfg=166 ctermbg=NONE guifg=#dc752f guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi Character ctermfg=89 ctermbg=NONE guifg=#6c3163 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-hi Comment ctermfg=37 ctermbg=NONE guifg=#2aa1ae guibg=NONE guisp=NONE cterm=NONE gui=NONE,italic
+hi Comment ctermfg=37 ctermbg=NONE guifg=#2aa1ae guibg=NONE guisp=NONE cterm=NONE,none gui=NONE,italic,none
 hi Conditional ctermfg=32 ctermbg=NONE guifg=#3a81c3 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
 hi Constant ctermfg=166 ctermbg=NONE guifg=#b46843 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi Define ctermfg=29 ctermbg=NONE guifg=#24775c guibg=NONE guisp=NONE cterm=NONE gui=NONE
@@ -701,7 +702,7 @@ hi Macro ctermfg=61 ctermbg=NONE guifg=#715ab1 guibg=NONE guisp=NONE cterm=NONE,
 hi Number ctermfg=176 ctermbg=NONE guifg=#e697e6 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi Operator ctermfg=74 ctermbg=NONE guifg=#58b0d9 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi PreCondit ctermfg=53 ctermbg=NONE guifg=#4e3163 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-hi PreProc ctermfg=177 ctermbg=NONE guifg=#d698fe guibg=NONE guisp=NONE cterm=NONE gui=NONE
+hi PreProc ctermfg=97 ctermbg=NONE guifg=#86589e guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi Repeat ctermfg=161 ctermbg=NONE guifg=#ba2f59 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
 hi SpecialChar ctermfg=37 ctermbg=NONE guifg=#21b8c7 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi SpecialComment ctermfg=67 ctermbg=NONE guifg=#768294 guibg=NONE guisp=NONE cterm=NONE gui=NONE
@@ -760,7 +761,7 @@ if has('nvim')
   hi! link TermCursor Cursor
   hi TermCursorNC ctermfg=255 ctermbg=60 guifg=#efeae9 guibg=#655370 guisp=NONE cterm=NONE gui=NONE
 endif
-if !(get(g:, "space_vim_plugin_hi_groups", 0) || get(g:, "space_vim_filetype_hi_groups", 0))
+if !(get(g:, "space_vim_plugin_hi_groups", 1) || get(g:, "space_vim_filetype_hi_groups", 1))
   finish
 endif
 if get(g:, "space_vim_plugin_hi_groups", 0)
@@ -788,10 +789,10 @@ if get(g:, "space_vim_plugin_hi_groups", 0)
   hi! link EasyMotionShade Comment
   hi gitcommitSelectedFile ctermfg=70 ctermbg=NONE guifg=#67b11d guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi gitcommitDiscardedFile ctermfg=196 ctermbg=NONE guifg=#f2241f guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi GitGutterAdd ctermfg=70 ctermbg=255 guifg=#67b11d guibg=#efeae9 guisp=NONE cterm=NONE gui=NONE
-  hi GitGutterChange ctermfg=166 ctermbg=255 guifg=#b46843 guibg=#efeae9 guisp=NONE cterm=NONE gui=NONE
-  hi GitGutterDelete ctermfg=196 ctermbg=255 guifg=#f2241f guibg=#efeae9 guisp=NONE cterm=NONE gui=NONE
-  hi GitGutterChangeDelete ctermfg=161 ctermbg=255 guifg=#ba2f59 guibg=#efeae9 guisp=NONE cterm=NONE gui=NONE
+  hi GitGutterAdd ctermfg=70 ctermbg=231 guifg=#67b11d guibg=#fbf8ef guisp=NONE cterm=NONE,bold gui=NONE,bold
+  hi GitGutterChange ctermfg=166 ctermbg=231 guifg=#b46843 guibg=#fbf8ef guisp=NONE cterm=NONE,bold gui=NONE,bold
+  hi GitGutterDelete ctermfg=196 ctermbg=231 guifg=#f2241f guibg=#fbf8ef guisp=NONE cterm=NONE,bold gui=NONE,bold
+  hi GitGutterChangeDelete ctermfg=161 ctermbg=231 guifg=#ba2f59 guibg=#fbf8ef guisp=NONE cterm=NONE,bold gui=NONE,bold
   if get(g:, "indent_guides_auto_colors", 0)
     if get(g: "space_vim_invert_indent_guides", 0)
       hi IndentGuidesOdd ctermfg=231 ctermbg=254 guifg=#fbf8ef guibg=#e3dedd guisp=NONE cterm=NONE,reverse gui=NONE,reverse
@@ -857,8 +858,8 @@ if get(g:, "space_vim_plugin_hi_groups", 0)
   hi SignifySignAdd ctermfg=70 ctermbg=NONE guifg=#67b11d guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi SignifySignChange ctermfg=166 ctermbg=NONE guifg=#b46843 guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi SignifySignDelete ctermfg=196 ctermbg=NONE guifg=#f2241f guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi SignatureMarkText ctermfg=32 ctermbg=255 guifg=#3a81c3 guibg=#efeae9 guisp=NONE cterm=NONE gui=NONE
-  hi SignatureMarkerText ctermfg=89 ctermbg=255 guifg=#6c3163 guibg=#efeae9 guisp=NONE cterm=NONE gui=NONE
+  hi SignatureMarkText ctermfg=32 ctermbg=231 guifg=#3a81c3 guibg=#fbf8ef guisp=NONE cterm=NONE,bold gui=NONE,bold
+  hi SignatureMarkerText ctermfg=89 ctermbg=231 guifg=#6c3163 guibg=#fbf8ef guisp=NONE cterm=NONE,bold gui=NONE,bold
   hi StartifyBracket ctermfg=60 ctermbg=NONE guifg=#504259 guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi StartifyFile ctermfg=60 ctermbg=231 guifg=#655370 guibg=#fbf8ef guisp=NONE cterm=NONE gui=NONE
   hi StartifyNumber ctermfg=32 ctermbg=NONE guifg=#3a81c3 guibg=NONE guisp=NONE cterm=NONE gui=NONE
@@ -866,12 +867,12 @@ if get(g:, "space_vim_plugin_hi_groups", 0)
   hi StartifySlash ctermfg=32 ctermbg=NONE guifg=#3a81c3 guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi StartifySection ctermfg=32 ctermbg=NONE guifg=#3a81c3 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
   hi! link StartifySpecial Type
-  hi StartifyHeader ctermfg=89 ctermbg=NONE guifg=#6c3163 guibg=NONE guisp=NONE cterm=NONE gui=NONE
-  hi StartifyFooter ctermfg=254 ctermbg=NONE guifg=#e3dedd guibg=NONE guisp=NONE cterm=NONE gui=NONE
+  hi StartifyHeader ctermfg=53 ctermbg=NONE guifg=#4e3163 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+  hi StartifyFooter ctermfg=53 ctermbg=NONE guifg=#4e3163 guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi SyntasticError ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE guisp=#f2241f cterm=NONE,underline gui=NONE,undercurl
   hi SyntasticWarning ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE guisp=#b1951d cterm=NONE,underline gui=NONE,undercurl
-  hi SyntasticErrorSign ctermfg=196 ctermbg=255 guifg=#f2241f guibg=#efeae9 guisp=NONE cterm=NONE gui=NONE
-  hi SyntasticWarningSign ctermfg=136 ctermbg=255 guifg=#b1951d guibg=#efeae9 guisp=NONE cterm=NONE gui=NONE
+  hi SyntasticErrorSign ctermfg=196 ctermbg=231 guifg=#f2241f guibg=#fbf8ef guisp=NONE cterm=NONE gui=NONE
+  hi SyntasticWarningSign ctermfg=136 ctermbg=231 guifg=#b1951d guibg=#fbf8ef guisp=NONE cterm=NONE gui=NONE
   hi multiple_cursors_cursor ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE guisp=NONE cterm=NONE,reverse gui=NONE,reverse
   hi multiple_cursors_visual ctermfg=NONE ctermbg=254 guifg=NONE guibg=#e3dedd guisp=NONE cterm=NONE gui=NONE
   hi CurrentWord ctermfg=NONE ctermbg=60 guifg=NONE guibg=#544a65 guisp=NONE cterm=NONE,underline gui=NONE,underline
@@ -963,6 +964,7 @@ if get(g:, "space_vim_filetype_hi_groups", 0)
   hi cOperator ctermfg=89 ctermbg=NONE guifg=#6c3163 guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi cStructure ctermfg=166 ctermbg=NONE guifg=#b46843 guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi rustSelf ctermfg=32 ctermbg=NONE guifg=#3a81c3 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+  hi rustPanic ctermfg=161 ctermbg=NONE guifg=#ba2f59 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
   hi! link pythonCoding Comment
   hi cssBraces ctermfg=32 ctermbg=NONE guifg=#3a81c3 guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi cssFunctionName ctermfg=136 ctermbg=NONE guifg=#b1951d guibg=NONE guisp=NONE cterm=NONE gui=NONE
@@ -1331,7 +1333,7 @@ finish
 " WildMenu                         orange   bg1     bold
 " Boolean                          war   none
 " Character                        purple   none
-" Comment                          green1   none    g=italic
+" Comment                          green1   none    none g=italic
 " Conditional                      blue     none    bold
 " Constant                         orange   none
 " Define                           aqua     none
@@ -1402,10 +1404,10 @@ finish
 " EasyMotionShade               -> Comment
 " gitcommitSelectedFile            green  none
 " gitcommitDiscardedFile           red    none
-" GitGutterAdd                     green  bg1
-" GitGutterChange                  orange   bg1
-" GitGutterDelete                  red    bg1
-" GitGutterChangeDelete            red1   bg1
+" GitGutterAdd                     green  bg0    bold
+" GitGutterChange                  orange bg0    bold
+" GitGutterDelete                  red    bg0    bold
+" GitGutterChangeDelete            red1   bg0    bold
 " IndentGuidesOdd  bg0 bg2 reverse
 " IndentGuidesEven bg0 bg1 reverse
 " IndentGuidesOdd  bg0 bg2
@@ -1438,8 +1440,8 @@ finish
 " SignifySignAdd                   green  none
 " SignifySignChange                orange none
 " SignifySignDelete                red    none
-" SignatureMarkText                blue   bg1
-" SignatureMarkerText              purple bg1
+" SignatureMarkText                blue   bg0 bold
+" SignatureMarkerText              purple bg0 bold
 " StartifyBracket                  fg3    none
 " StartifyFile                     fg1    bg0
 " StartifyNumber                   blue   none
@@ -1447,12 +1449,12 @@ finish
 " StartifySlash                    blue   none
 " StartifySection                  blue   none bold
 " StartifySpecial               -> Type
-" StartifyHeader                   purple none
-" StartifyFooter                   bg2    none
+" StartifyHeader                   purple1 none
+" StartifyFooter                   purple1 none
 " SyntasticError                   none   none    t=underline g=undercurl s=red
 " SyntasticWarning                 none   none    t=underline g=undercurl s=yellow
-" SyntasticErrorSign               red    bg1
-" SyntasticWarningSign             yellow bg1
+" SyntasticErrorSign               red    bg0
+" SyntasticWarningSign             yellow bg0
 " multiple_cursors_cursor          none   none    reverse
 " multiple_cursors_visual          none   bg2
 " CurrentWord                   none   purple3   underline
@@ -1536,6 +1538,7 @@ finish
 " cOperator                        purple     none
 " cStructure                       orange     none
 " rustSelf                         blue       none bold
+" rustPanic                        red1       none bold
 " pythonCoding                     -> Comment
 " cssBraces                        blue   none
 " cssFunctionName                  yellow none
@@ -1811,7 +1814,7 @@ finish
 " Color: blue       #3a81c3 ~
 " Color: blue1      #715ab1 ~
 " Color: purple     #6c3163 ~
-" Color: purple0    #d698fe ~
+" Color: purple0    #86589e ~
 " Color: purple1    #4e3163 ~
 " Color: purple2    #d3d3e7 ~
 " Color: purple3    #544a65 ~
@@ -1891,7 +1894,7 @@ finish
 " WildMenu                         orange   bg1     bold
 " Boolean                          war   none
 " Character                        purple   none
-" Comment                          green1   none    g=italic
+" Comment                          green1   none    none g=italic
 " Conditional                      blue     none    bold
 " Constant                         orange   none
 " Define                           aqua     none
@@ -1962,10 +1965,10 @@ finish
 " EasyMotionShade               -> Comment
 " gitcommitSelectedFile            green  none
 " gitcommitDiscardedFile           red    none
-" GitGutterAdd                     green  bg1
-" GitGutterChange                  orange   bg1
-" GitGutterDelete                  red    bg1
-" GitGutterChangeDelete            red1   bg1
+" GitGutterAdd                     green  bg0    bold
+" GitGutterChange                  orange bg0    bold
+" GitGutterDelete                  red    bg0    bold
+" GitGutterChangeDelete            red1   bg0    bold
 " IndentGuidesOdd  bg0 bg2 reverse
 " IndentGuidesEven bg0 bg1 reverse
 " IndentGuidesOdd  bg0 bg2
@@ -1998,8 +2001,8 @@ finish
 " SignifySignAdd                   green  none
 " SignifySignChange                orange none
 " SignifySignDelete                red    none
-" SignatureMarkText                blue   bg1
-" SignatureMarkerText              purple bg1
+" SignatureMarkText                blue   bg0 bold
+" SignatureMarkerText              purple bg0 bold
 " StartifyBracket                  fg3    none
 " StartifyFile                     fg1    bg0
 " StartifyNumber                   blue   none
@@ -2007,12 +2010,12 @@ finish
 " StartifySlash                    blue   none
 " StartifySection                  blue   none bold
 " StartifySpecial               -> Type
-" StartifyHeader                   purple none
-" StartifyFooter                   bg2    none
+" StartifyHeader                   purple1 none
+" StartifyFooter                   purple1 none
 " SyntasticError                   none   none    t=underline g=undercurl s=red
 " SyntasticWarning                 none   none    t=underline g=undercurl s=yellow
-" SyntasticErrorSign               red    bg1
-" SyntasticWarningSign             yellow bg1
+" SyntasticErrorSign               red    bg0
+" SyntasticWarningSign             yellow bg0
 " multiple_cursors_cursor          none   none    reverse
 " multiple_cursors_visual          none   bg2
 " CurrentWord                   none   purple3   underline
@@ -2096,6 +2099,7 @@ finish
 " cOperator                        purple     none
 " cStructure                       orange     none
 " rustSelf                         blue       none bold
+" rustPanic                        red1       none bold
 " pythonCoding                     -> Comment
 " cssBraces                        blue   none
 " cssFunctionName                  yellow none

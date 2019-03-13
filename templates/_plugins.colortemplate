@@ -41,10 +41,10 @@ gitcommitSelectedFile            green  none
 gitcommitDiscardedFile           red    none
 # }}}
 # GitGutter {{{
-GitGutterAdd                     green  bg1
-GitGutterChange                  orange   bg1
-GitGutterDelete                  red    bg1
-GitGutterChangeDelete            red1   bg1
+GitGutterAdd                     green  bg0    bold
+GitGutterChange                  orange bg0    bold
+GitGutterDelete                  red    bg0    bold
+GitGutterChangeDelete            red1   bg0    bold
 # }}}
 # Indent Guides {{{
 verbatim
@@ -139,8 +139,8 @@ SignifySignChange                orange none
 SignifySignDelete                red    none
 # }}}
 # Signature {{{
-SignatureMarkText                blue   bg1
-SignatureMarkerText              purple bg1
+SignatureMarkText                blue   bg0 bold
+SignatureMarkerText              purple bg0 bold
 # }}}
 # Startify {{{
 StartifyBracket                  fg3    none
@@ -150,14 +150,14 @@ StartifyPath                     blue1  none bold
 StartifySlash                    blue   none
 StartifySection                  blue   none bold
 StartifySpecial               -> Type
-StartifyHeader                   purple none
-StartifyFooter                   bg2    none
+StartifyHeader                   purple1 none
+StartifyFooter                   purple1 none
 # }}}
 # Syntastic {{{
 SyntasticError                   none   none    t=underline g=undercurl s=red
 SyntasticWarning                 none   none    t=underline g=undercurl s=yellow
-SyntasticErrorSign               red    bg1
-SyntasticWarningSign             yellow bg1
+SyntasticErrorSign               red    bg0
+SyntasticWarningSign             yellow bg0
 # }}}
 # Vim Multiple Cursors {{{
 multiple_cursors_cursor          none   none    reverse

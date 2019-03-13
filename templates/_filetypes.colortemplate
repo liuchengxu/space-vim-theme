@@ -111,6 +111,7 @@ cStructure                       orange     none
 # }}}
 # rust {{{
 rustSelf                         blue       none bold
+rustPanic                        red1       none bold
 #}}}
 # Python {{{
 # pythonBuiltin                    orange none
