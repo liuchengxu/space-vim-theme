@@ -4,7 +4,7 @@
 " Maintainer:   Liu-Cheng Xu <xuliuchengxlc@gmail.com>
 " Website:      https://github.com/liuchengxu/space-vim-theme
 " License:      Vim License (see `:help license`)
-" Last Updated: Wed Mar 13 15:25:28 2019
+" Last Updated: Fri Mar 15 21:43:59 2019
 
 if !(has('termguicolors') && &termguicolors) && !has('gui_running')
       \ && (!exists('&t_Co') || &t_Co < 256)
@@ -62,6 +62,7 @@ if &background ==# 'dark'
   hi PmenuThumb ctermfg=NONE ctermbg=60 guifg=NONE guibg=#5d4d7a guisp=NONE cterm=NONE gui=NONE
   hi Question ctermfg=173 ctermbg=NONE guifg=#e18254 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
   hi! link QuickFixLine Search
+  hi! link qfLineNr Type
   hi Search ctermfg=70 ctermbg=235 guifg=#67b11d guibg=#292b2e guisp=NONE cterm=NONE,bold,reverse gui=NONE,bold,reverse
   hi SpecialKey ctermfg=170 ctermbg=NONE guifg=#bc6ec5 guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi SpellBad ctermfg=196 ctermbg=NONE guifg=#f2241f guibg=NONE guisp=#f2241f cterm=NONE,underline gui=NONE,italic,undercurl
@@ -663,6 +664,7 @@ hi PmenuSel ctermfg=NONE ctermbg=189 guifg=NONE guibg=#c8c6dd guisp=NONE cterm=N
 hi PmenuThumb ctermfg=NONE ctermbg=189 guifg=NONE guibg=#d3d3e7 guisp=NONE cterm=NONE gui=NONE
 hi Question ctermfg=166 ctermbg=NONE guifg=#b46843 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
 hi! link QuickFixLine Search
+hi! link qfLineNr Type
 hi Search ctermfg=70 ctermbg=231 guifg=#67b11d guibg=#fbf8ef guisp=NONE cterm=NONE,bold,reverse gui=NONE,bold,reverse
 hi SpecialKey ctermfg=89 ctermbg=NONE guifg=#6c3163 guibg=NONE guisp=NONE cterm=NONE gui=NONE
 hi SpellBad ctermfg=196 ctermbg=NONE guifg=#f2241f guibg=NONE guisp=#f2241f cterm=NONE,underline gui=NONE,italic,undercurl
@@ -1313,6 +1315,7 @@ finish
 " PmenuThumb                       none     purple2
 " Question                         orange   none    bold
 " QuickFixLine                  -> Search
+" qfLineNr                      -> Type
 " Search                           green    bg0     bold,reverse
 " SpecialKey                       purple   none
 " SpellBad                         red      none    t=underline g=italic,undercurl s=red
@@ -1874,6 +1877,7 @@ finish
 " PmenuThumb                       none     purple2
 " Question                         orange   none    bold
 " QuickFixLine                  -> Search
+" qfLineNr                      -> Type
 " Search                           green    bg0     bold,reverse
 " SpecialKey                       purple   none
 " SpellBad                         red      none    t=underline g=italic,undercurl s=red

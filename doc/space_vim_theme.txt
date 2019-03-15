@@ -21,7 +21,7 @@ Space-vim theme requires at least 256 colors and supports "true color" terminals
 1. Colorscheme options					*space_vim-options*
 
 						*g:space_vim_filetype_hi_groups*
-Set to 1 to include syntax highlighting definitions for several filetypes.
+Set to 0 to disable syntax highlighting definitions for several filetypes.
 >
 	let g:space_vim_filetype_hi_groups = 0
 <
@@ -41,7 +41,7 @@ Set to 1 if you want strings in italics.
 	let g:space_vim_italicize_strings = 0
 <
 						*g:space_vim_plugin_hi_groups*
-Set to 1 to include syntax highlighting definitions for a number of popular
+Set to 0 to disable syntax highlighting definitions for a number of popular
 plugins:
 >
 	let g:space_vim_plugin_hi_groups = 0

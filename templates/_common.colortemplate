@@ -52,6 +52,7 @@ PmenuThumb                       none     purple2
 
 Question                         orange   none    bold
 QuickFixLine                  -> Search
+qfLineNr                      -> Type
 Search                           green    bg0     bold,reverse
 SpecialKey                       purple   none
 SpellBad                         red      none    t=underline g=italic,undercurl s=red
