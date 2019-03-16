@@ -4,7 +4,7 @@
 " Maintainer:   Liu-Cheng Xu <xuliuchengxlc@gmail.com>
 " Website:      https://github.com/liuchengxu/space-vim-theme
 " License:      Vim License (see `:help license`)
-" Last Updated: Fri Mar 15 21:43:59 2019
+" Last Updated: Sat Mar 16 09:16:45 2019
 
 if !(has('termguicolors') && &termguicolors) && !has('gui_running')
       \ && (!exists('&t_Co') || &t_Co < 256)
@@ -277,6 +277,10 @@ if &background ==# 'dark'
     hi multiple_cursors_visual ctermfg=NONE ctermbg=232 guifg=NONE guibg=#100a14 guisp=NONE cterm=NONE gui=NONE
     hi CurrentWord ctermfg=NONE ctermbg=60 guifg=NONE guibg=#544a65 guisp=NONE cterm=NONE,underline gui=NONE,underline
     hi CurrentWordTwins ctermfg=NONE ctermbg=60 guifg=NONE guibg=#544a65 guisp=NONE cterm=NONE gui=NONE
+    hi! link WhichKey Function
+    hi WhichKeySeperator ctermfg=70 ctermbg=NONE guifg=#67b11d guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi! link WhichKeyGroup Keyword
+    hi! link WhichKeyDesc Identifier
     let g:vimshell_escape_colors = [
           \ '#34323e', '#f2241f', '#67b11d', '#b1951d',
           \ '#4f97d7', '#bc6ec5', '#2d9574', '#5b5b5b',
@@ -879,6 +883,10 @@ if get(g:, "space_vim_plugin_hi_groups", 0)
   hi multiple_cursors_visual ctermfg=NONE ctermbg=254 guifg=NONE guibg=#e3dedd guisp=NONE cterm=NONE gui=NONE
   hi CurrentWord ctermfg=NONE ctermbg=60 guifg=NONE guibg=#544a65 guisp=NONE cterm=NONE,underline gui=NONE,underline
   hi CurrentWordTwins ctermfg=NONE ctermbg=60 guifg=NONE guibg=#544a65 guisp=NONE cterm=NONE gui=NONE
+  hi! link WhichKey Function
+  hi WhichKeySeperator ctermfg=70 ctermbg=NONE guifg=#67b11d guibg=NONE guisp=NONE cterm=NONE gui=NONE
+  hi! link WhichKeyGroup Keyword
+  hi! link WhichKeyDesc Identifier
   let g:vimshell_escape_colors = [
         \ '#a8a4ae', '#f2241f', '#67b11d', '#b1951d',
         \ '#3a81c3', '#6c3163', '#24775c', '#463a4e',
@@ -1462,6 +1470,10 @@ finish
 " multiple_cursors_visual          none   bg2
 " CurrentWord                   none   purple3   underline
 " CurrentWordTwins              none   purple3
+" WhichKey                     -> Function
+" WhichKeySeperator               green none
+" WhichKeyGroup                -> Keyword
+" WhichKeyDesc                 -> Identifier
 " diffAdded                        green      none
 " diffRemoved                      red        none
 " diffChanged                      aqua       none
@@ -2024,6 +2036,10 @@ finish
 " multiple_cursors_visual          none   bg2
 " CurrentWord                   none   purple3   underline
 " CurrentWordTwins              none   purple3
+" WhichKey                     -> Function
+" WhichKeySeperator               green none
+" WhichKeyGroup                -> Keyword
+" WhichKeyDesc                 -> Identifier
 " diffAdded                        green      none
 " diffRemoved                      red        none
 " diffChanged                      aqua       none

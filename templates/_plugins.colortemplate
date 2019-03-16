@@ -167,6 +167,13 @@ multiple_cursors_visual          none   bg2
 CurrentWord                   none   purple3   underline
 CurrentWordTwins              none   purple3
 
+# vim-which-key {{{
+WhichKey                     -> Function
+WhichKeySeperator               green none
+WhichKeyGroup                -> Keyword
+WhichKeyDesc                 -> Identifier
+# }}}
+
 # Vimshell {{{
 verbatim
 let g:vimshell_escape_colors = [
