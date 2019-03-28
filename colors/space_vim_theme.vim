@@ -288,7 +288,7 @@ if &background ==# 'dark'
           \ '#4f97d7', '#bc6ec5', '#2d9574', '#cdcdcd'
           \ ]
   endif
-  if get(g:, "space_vim_filetype_hi_groups", 0)
+  if get(g:, "space_vim_filetype_hi_groups", 1)
     hi diffAdded ctermfg=70 ctermbg=NONE guifg=#67b11d guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi diffRemoved ctermfg=196 ctermbg=NONE guifg=#f2241f guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi diffChanged ctermfg=29 ctermbg=NONE guifg=#2d9574 guibg=NONE guisp=NONE cterm=NONE gui=NONE
@@ -369,6 +369,7 @@ if &background ==# 'dark'
     hi cStructure ctermfg=173 ctermbg=NONE guifg=#e18254 guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi rustSelf ctermfg=32 ctermbg=NONE guifg=#4f97d7 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
     hi rustPanic ctermfg=168 ctermbg=NONE guifg=#ce537a guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+    hi rustAssert ctermfg=68 ctermbg=NONE guifg=#7590db guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
     hi! link pythonCoding Comment
     hi cssBraces ctermfg=32 ctermbg=NONE guifg=#4f97d7 guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi cssFunctionName ctermfg=136 ctermbg=NONE guifg=#b1951d guibg=NONE guisp=NONE cterm=NONE gui=NONE
@@ -485,6 +486,11 @@ if &background ==# 'dark'
     hi jsVariableDef ctermfg=249 ctermbg=NONE guifg=#b2b2b2 guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi! link jsObjectBraces Special
     hi jsObjectValue ctermfg=147 ctermbg=NONE guifg=#b7b7ff guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi jsClassBlock ctermfg=68 ctermbg=NONE guifg=#7590db guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi jsFutureKeys ctermfg=173 ctermbg=NONE guifg=#e18254 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+    hi jsFuncArgs ctermfg=32 ctermbg=NONE guifg=#4f97d7 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi jsStorageClass ctermfg=32 ctermbg=NONE guifg=#4f97d7 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+    hi jsxRegion ctermfg=32 ctermbg=NONE guifg=#4f97d7 guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi typeScriptReserved ctermfg=29 ctermbg=NONE guifg=#2d9574 guibg=NONE guisp=NONE cterm=NONE gui=NONE
     hi! link typeScriptLabel Label
     hi! link typeScriptFuncKeyword Function
@@ -894,7 +900,7 @@ if get(g:, "space_vim_plugin_hi_groups", 1)
         \ '#3a81c3', '#6c3163', '#24775c', '#83758c'
         \ ]
 endif
-if get(g:, "space_vim_filetype_hi_groups", 0)
+if get(g:, "space_vim_filetype_hi_groups", 1)
   hi diffAdded ctermfg=70 ctermbg=NONE guifg=#67b11d guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi diffRemoved ctermfg=196 ctermbg=NONE guifg=#f2241f guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi diffChanged ctermfg=29 ctermbg=NONE guifg=#24775c guibg=NONE guisp=NONE cterm=NONE gui=NONE
@@ -975,6 +981,7 @@ if get(g:, "space_vim_filetype_hi_groups", 0)
   hi cStructure ctermfg=166 ctermbg=NONE guifg=#b46843 guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi rustSelf ctermfg=32 ctermbg=NONE guifg=#3a81c3 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
   hi rustPanic ctermfg=161 ctermbg=NONE guifg=#ba2f59 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+  hi rustAssert ctermfg=61 ctermbg=NONE guifg=#715ab1 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
   hi! link pythonCoding Comment
   hi cssBraces ctermfg=32 ctermbg=NONE guifg=#3a81c3 guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi cssFunctionName ctermfg=136 ctermbg=NONE guifg=#b1951d guibg=NONE guisp=NONE cterm=NONE gui=NONE
@@ -1091,6 +1098,11 @@ if get(g:, "space_vim_filetype_hi_groups", 0)
   hi jsVariableDef ctermfg=60 ctermbg=NONE guifg=#655370 guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi! link jsObjectBraces Special
   hi jsObjectValue ctermfg=147 ctermbg=NONE guifg=#b7b7ff guibg=NONE guisp=NONE cterm=NONE gui=NONE
+  hi jsClassBlock ctermfg=61 ctermbg=NONE guifg=#715ab1 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+  hi jsFutureKeys ctermfg=166 ctermbg=NONE guifg=#b46843 guibg=NONE guisp=NONE cterm=NONE,bold gui=NONE,bold
+  hi jsFuncArgs ctermfg=32 ctermbg=NONE guifg=#3a81c3 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+  hi jsStorageClass ctermfg=32 ctermbg=NONE guifg=#3a81c3 guibg=NONE guisp=NONE cterm=NONE gui=NONE
+  hi jsxRegion ctermfg=32 ctermbg=NONE guifg=#3a81c3 guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi typeScriptReserved ctermfg=29 ctermbg=NONE guifg=#24775c guibg=NONE guisp=NONE cterm=NONE gui=NONE
   hi! link typeScriptLabel Label
   hi! link typeScriptFuncKeyword Function
@@ -1554,6 +1566,7 @@ finish
 " cStructure                       orange     none
 " rustSelf                         blue       none bold
 " rustPanic                        red1       none bold
+" rustAssert                       blue1      none bold
 " pythonCoding                     -> Comment
 " cssBraces                        blue   none
 " cssFunctionName                  yellow none
@@ -1668,8 +1681,13 @@ finish
 " jsFuncArgs                       blue0 none
 " jsFuncBraces                     blue1 none
 " jsVariableDef                    fg1 none
-" jsObjectBraces                 -> Special
+" jsObjectBraces                -> Special
 " jsObjectValue                    float none
+" jsClassBlock                     blue1 none
+" jsFutureKeys                     orange none bold
+" jsFuncArgs                       blue none
+" jsStorageClass                   blue none
+" jsxRegion                        blue none
 " typeScriptReserved               aqua   none
 " typeScriptLabel               -> Label
 " typeScriptFuncKeyword         -> Function
@@ -2120,6 +2138,7 @@ finish
 " cStructure                       orange     none
 " rustSelf                         blue       none bold
 " rustPanic                        red1       none bold
+" rustAssert                       blue1      none bold
 " pythonCoding                     -> Comment
 " cssBraces                        blue   none
 " cssFunctionName                  yellow none
@@ -2234,8 +2253,13 @@ finish
 " jsFuncArgs                       blue0 none
 " jsFuncBraces                     blue1 none
 " jsVariableDef                    fg1 none
-" jsObjectBraces                 -> Special
+" jsObjectBraces                -> Special
 " jsObjectValue                    float none
+" jsClassBlock                     blue1 none
+" jsFutureKeys                     orange none bold
+" jsFuncArgs                       blue none
+" jsStorageClass                   blue none
+" jsxRegion                        blue none
 " typeScriptReserved               aqua   none
 " typeScriptLabel               -> Label
 " typeScriptFuncKeyword         -> Function

@@ -2,7 +2,7 @@
 
 # Filetype specific groups
 verbatim
-if get(g:, "@optionprefix_filetype_hi_groups", 0)
+if get(g:, "@optionprefix_filetype_hi_groups", 1)
 endverbatim
 # Diff {{{
 diffAdded                        green      none
@@ -112,6 +112,7 @@ cStructure                       orange     none
 # rust {{{
 rustSelf                         blue       none bold
 rustPanic                        red1       none bold
+rustAssert                       blue1      none bold
 #}}}
 # Python {{{
 # pythonBuiltin                    orange none
@@ -265,8 +266,13 @@ jsObjectColon                    red1 none
 jsFuncArgs                       blue0 none
 jsFuncBraces                     blue1 none
 jsVariableDef                    fg1 none
-jsObjectBraces                 -> Special
+jsObjectBraces                -> Special
 jsObjectValue                    float none
+jsClassBlock                     blue1 none
+jsFutureKeys                     orange none bold
+jsFuncArgs                       blue none
+jsStorageClass                   blue none
+jsxRegion                        blue none
 # }}}
 # TypeScript {{{
 typeScriptReserved               aqua   none
