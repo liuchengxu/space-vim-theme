@@ -194,7 +194,7 @@ if &background ==# 'dark'
     hi GitGutterDelete ctermfg=196 ctermbg=235 guifg=#f2241f guibg=#292b2e guisp=NONE cterm=NONE,bold gui=NONE,bold
     hi GitGutterChangeDelete ctermfg=168 ctermbg=235 guifg=#ce537a guibg=#292b2e guisp=NONE cterm=NONE,bold gui=NONE,bold
     if get(g:, "indent_guides_auto_colors", 0)
-      if get(g: "space_vim_invert_indent_guides", 0)
+      if get(g:, "space_vim_invert_indent_guides", 0)
         hi IndentGuidesOdd ctermfg=235 ctermbg=232 guifg=#292b2e guibg=#100a14 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
         hi IndentGuidesEven ctermfg=235 ctermbg=234 guifg=#292b2e guibg=#212026 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
       else
@@ -806,7 +806,7 @@ if get(g:, "space_vim_plugin_hi_groups", 1)
   hi GitGutterDelete ctermfg=196 ctermbg=231 guifg=#f2241f guibg=#fbf8ef guisp=NONE cterm=NONE,bold gui=NONE,bold
   hi GitGutterChangeDelete ctermfg=161 ctermbg=231 guifg=#ba2f59 guibg=#fbf8ef guisp=NONE cterm=NONE,bold gui=NONE,bold
   if get(g:, "indent_guides_auto_colors", 0)
-    if get(g: "space_vim_invert_indent_guides", 0)
+    if get(g:, "space_vim_invert_indent_guides", 0)
       hi IndentGuidesOdd ctermfg=231 ctermbg=254 guifg=#fbf8ef guibg=#e3dedd guisp=NONE cterm=NONE,reverse gui=NONE,reverse
       hi IndentGuidesEven ctermfg=231 ctermbg=255 guifg=#fbf8ef guibg=#efeae9 guisp=NONE cterm=NONE,reverse gui=NONE,reverse
     else

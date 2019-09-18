@@ -49,7 +49,7 @@ GitGutterChangeDelete            red1   bg0    bold
 # Indent Guides {{{
 verbatim
 if get(g:, "indent_guides_auto_colors", 0)
-  if get(g: "@optionprefix_invert_indent_guides", 0)
+  if get(g:, "@optionprefix_invert_indent_guides", 0)
 endverbatim
 IndentGuidesOdd  bg0 bg2 reverse
 IndentGuidesEven bg0 bg1 reverse
